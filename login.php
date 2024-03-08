@@ -18,11 +18,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         
         $row = $result->fetch_assoc();
+        $imageInfo = getimagesizefromstring($row['img']);
+        $imageType = $imageInfo['mime'];
+        $base64img = base64_encode($row['img']);
 
         // Imposta le informazioni dell'utente nella sessione
+        $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $row['Email'];
+        $_SESSION['image'] = $base64img;
+        $_SESSION['imageinfo'] = $imageInfo;
 
-        $response = array("success" => true, "username" => $row['Nome']);
+        $response = array("success" => true, "img" => $base64img , "imginfo" => $imageType);
     } 
     else 
     {

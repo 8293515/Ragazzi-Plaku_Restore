@@ -1,7 +1,26 @@
 <link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
+      <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    // Esegui una chiamata AJAX per ottenere le informazioni sulla sessione dal server
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "keeplogin.php", true);
 
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var sessionInfo = JSON.parse(xhr.responseText);
+
+            if (sessionInfo.isLoggedIn) {
+                // L'utente è loggato, aggiorna il bottone di login
+                updateLoginButton(sessionInfo.img, sessionInfo.imginfo);
+            }
+        }
+    };
+
+    xhr.send();
+});
+    </script>
 </head>
 <div class="menu-wrapper">
       <div class="w-dyn-list">
@@ -16,7 +35,7 @@
             <a href="/" aria-current="page" class="brand w-nav-brand w--current"><img src="images/[removal.ai]_d1ffefac-a7c4-4aea-b9cd-0cb9642791d6-restore.png" alt="" width="131"></a>
             <div class="cart-nav-wrapper">
               <nav role="navigation" class="nav-menu w-nav-menu">
-                <a href="/" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
+                <a href="index.php" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
                 <a href="/about" class="nav-link w-nav-link">Info</a>
                 <a href="/shop" class="nav-link w-nav-link">Adotta</a>
                 <a href="/donations" class="nav-link w-nav-link">Iscrizioni</a>
@@ -33,7 +52,7 @@
     </div>
 </div>
 
-<!--MODAL-->
+<!--MODAL LOGIN-->
 <div id="id01" class="w3-modal" style="display: none;">
     <div class="w3-modal-content">
         <div class="w3-container">
@@ -53,7 +72,22 @@
     </div>
 </div>
 
+<!--MODAL LOGOUT-->
+<div id="profileModal" class="w3-modal" style="display: none;">
+    <div class="w3-modal-content">
+        <div class="w3-container">
+          <form method="POST" action="logout.php">
+            <button onclick="closeProfileModal()" class="w3-button w3-display-topright">&times;</button>
+            <h2>Area Personale</h2>
+            <button onclick="goToPersonalArea()" class="btn profile-btn">Area Personale</button>
+            <input type="submit" class="btn login-btn" class="btn profile-btn" value="Logout">
+          </form>
+        </div>
+    </div>
+</div>
+
   <script>
+   
   function openModal() {
     var modal = document.getElementById('id01');
     modal.style.display = 'flex';
@@ -97,7 +131,7 @@
             var response = JSON.parse(xhr.responseText);
 
             if (response.success == true) {
-                updateLoginButton(response.username);
+                updateLoginButton(response.img,response.imginfo);
                 closeModal();
             } else {
                 alert("Errore di login: " + response.message);
@@ -112,43 +146,49 @@
     return false;
 }
 
-function updateLoginButton(username) {
+function updateLoginButton(imgBase64,imgInfo) {
     var loginButton = document.querySelector('.login-button');
     if (loginButton) {
-        loginButton.innerHTML = username;
-        loginButton.disabled = true;
-
-        // Puoi anche aggiungere un link per il logout se necessario
-        var logoutLink = document.createElement('a');
-        logoutLink.href = '#';
-        logoutLink.innerHTML = 'Logout';
-        logoutLink.className = 'nav-link w-nav-link';
-        logoutLink.onclick = function () {
-            logout();
-            return false;
-        };
+        // Rimuovi il contenuto esistente e abilita l'immagine di sfondo
+        loginButton.innerHTML = "";
+        loginButton.onclick= openProfileModal;
+        loginButton.style.backgroundImage = "url('data:image/" + imgInfo + ";base64," + imgBase64 + "')";
+        loginButton.classList.add('logged-in'); // Aggiungi la classe 'logged-in'
+        loginButton.style.backgroundSize = "cover";
+        loginButton.style.borderRadius = "50%";
+        loginButton.style.width = "50px"; // Imposta la larghezza del cerchio
+        loginButton.style.height = "50px"; // Imposta l'altezza del cerchio
         
 
-        loginButton.parentNode.appendChild(logoutLink);
     }
 }
+function openProfileModal() {
+    var profileModal = document.getElementById('profileModal');
+    profileModal.style.display = 'flex';
 
-function logout() {
-    // Esegui la chiamata AJAX per effettuare il logout (se necessario)
+    // Calcola e imposta la posizione del modal al centro
+    var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    var modalHeight = profileModal.offsetHeight;
+    var topPosition = (windowHeight - modalHeight) / 2;
+    profileModal.style.top = topPosition + 'px';
 
-    // Rimuovi le informazioni dell'utente dalla sessione
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "logout.php", true);
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Ricarica la pagina dopo il logout
-            location.reload();
-        }
-    };
-
-    xhr.send();
+    profileModal.classList.add('show');
+    // Aggiungi una classe al body per disabilitare lo scrolling
+    document.body.classList.add('modal-open');
 }
+
+function closeProfileModal() {
+    var profileModal = document.getElementById('profileModal');
+    profileModal.classList.remove('show');
+    setTimeout(function () {
+        profileModal.style.display = 'none';
+    }, 500); // Durata dell'animazione in millisecondi
+
+    // Rimuovi la classe dal body per abilitare lo scrolling
+    document.body.classList.remove('modal-open');
+}
+
+
 </script>
 
 </div>

@@ -10,7 +10,6 @@ if ($conn->connect_error) {
 }
 
 // Inizio della sessione
-session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recupera i dati dal modulo HTML

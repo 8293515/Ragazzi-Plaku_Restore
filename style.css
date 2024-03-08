@@ -682,5 +682,10 @@ body.modal-open {
   overflow: hidden;
 }
     
+  /* Aggiungi questa regola specifica per ridurre la sfocatura dell'immagine */
+.nav-link.login-button.logged-in::before {
+  filter: brightness(1) contrast(1) saturate(1) blur(0px); /* Puoi regolare questi valori */
+  background-size: contain;
   
+}
   
