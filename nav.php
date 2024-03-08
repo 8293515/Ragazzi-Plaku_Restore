@@ -76,8 +76,8 @@
 <div id="profileModal" class="w3-modal" style="display: none;">
     <div class="w3-modal-content">
         <div class="w3-container">
+        <button onclick="closeProfileModal()" class="w3-button w3-display-topright">&times;</button>
           <form method="POST" action="logout.php">
-            <button onclick="closeProfileModal()" class="w3-button w3-display-topright">&times;</button>
             <h2>Area Personale</h2>
             <button onclick="goToPersonalArea()" class="btn profile-btn">Area Personale</button>
             <input type="submit" class="btn login-btn" class="btn profile-btn" value="Logout">

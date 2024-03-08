@@ -29,7 +29,7 @@
             <div class="animal-grid">
                 <!-- Animal option 1 -->
                 <div class="animal-option">
-                    <img src="Parco-Artico.jpg" alt="ParcoArtico">
+                    <img src="images/Parco-Artico.jpg" alt="ParcoArtico">
                     <label for="parcoartico">Parco Artico</label>
                     <p>Situato nel Sud della Nuova Zelanda accoglie diverse specie artiche.</p>
                     <button class="custom-btn btn-4"><span>Scegli</span></button>
@@ -37,20 +37,20 @@
 
                 <!-- Animal option 2 -->
                 <div class="animal-option">
-                    <img src="Parco-Savana.jpg" alt="Savana">
+                    <img src="images/Parco-Savana.jpg" alt="Savana">
                     <label for="savana">Savana</label>
                     <button class="custom-btn btn-4"><span>Scegli</span></button>
                 </div>
 
                 <!-- Animal option 3 (Add more as needed) -->
                 <div class="animal-option">
-                    <img src="Parco-Giungla.jpg" alt="Giungla">
+                    <img src="images/Parco-Giungla.jpg" alt="Giungla">
                     <label for="giungla">Giungla</label>
                     <button class="custom-btn btn-4"><span>Scegli</span></button>
                 </div>
 
                 <div class="animal-option">
-                    <img src="Parco-Alpino.jpg" alt="ParcoAlpino">
+                    <img src="images/Parco-Alpino.jpg" alt="ParcoAlpino">
                     <label for="parcoalpino">Parco Alpino</label>
                     <button class="custom-btn btn-4"><span>Scegli</span></button>
                 </div>
