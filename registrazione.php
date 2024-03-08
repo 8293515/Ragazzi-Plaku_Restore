@@ -14,8 +14,8 @@
   <div class="w-layout-blockcontainer container-2 w-container">
   <h1 class="heading">Registrazione</h1>
     <div class="w-form">
-      <form id="email-form" name="email-form" data-name="Email Form" method="post" class="form" action="register.php">
-      
+      <form id="email-form" name="email-form" data-name="Email Form" method="post" class="form" action="register.php" enctype="multipart/form-data">
+          <input type="file" id="myfile" name="myfile">
           <label for="name"class="field-label-7">Nome</label>   
           <input class="w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name" />
           <label for="email-2" class="field-label-6">Cognome</label><input class="w-input" maxlength="256" name="cognome" data-name="Email 2" placeholder="" type="text" id="cognome" required="" />
