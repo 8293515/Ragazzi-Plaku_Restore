@@ -31,6 +31,7 @@
                 <div class="animal-option">
                     <img src="Parco-Artico.jpg" alt="ParcoArtico">
                     <label for="parcoartico">Parco Artico</label>
+                    <p>Situato nel Sud della Nuova Zelanda accoglie diverse specie artiche.</p>
                     <button class="custom-btn btn-4"><span>Scegli</span></button>
                 </div>
 
