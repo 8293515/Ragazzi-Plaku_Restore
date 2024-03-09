@@ -43,7 +43,7 @@
                     <img src="images/Parco-Savana.jpg" alt="Savana">
                     <label for="savana">Savana</label>
                     <form method="post" action="DatiParco.php">
-                    <input type="hidden" value="Parco Savana" id="nomeparco" name="nomeparco">
+                    <input type="hidden" value="Savana" id="nomeparco" name="nomeparco">
                     <input type="submit" value="Scegli" class="custom-btn btn-4">
                     </form>
                 </div>

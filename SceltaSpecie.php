@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="SpecieStyle.css">
     <?php include 'nav.php'; ?>
     <script>
-       document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
     // Esegui una chiamata AJAX per ottenere le informazioni sulla specie dal server
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "generadatispecie.php", true);
@@ -16,8 +16,6 @@
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             var specieData = JSON.parse(xhr.responseText);
-            console.log(specieData);
-
 
             // Crea la griglia della fauna
             var faunaGrid = createSelectionGrid('fauna-grid');
@@ -25,67 +23,102 @@
             // Crea la griglia della flora
             var floraGrid = createSelectionGrid('flora-grid');
 
-            // Itera attraverso i dati e crea gli elementi
+            // Imposta il numero desiderato di celle per riga
             var maxCells = 3; // Massimo numero di celle per griglia
-            var currentGrid = faunaGrid; // Inizia con la griglia della fauna
-            var currentCellCount = 0;
 
-            specieData.forEach(function (data) {
-                if (currentCellCount === maxCells) {
-                    // Se abbiamo raggiunto il massimo di celle, passa a una nuova griglia
-                    currentGrid = currentGrid === faunaGrid ? createSelectionGrid('fauna-grid') : createSelectionGrid('flora-grid');
-                    currentCellCount = 0;
+            // Itera attraverso i dati e crea gli elementi
+            var currentCellCount = 0;
+            var currentRowCount = 0;
+
+            specieData.forEach(function (data, index) {
+                var selectionOption = createSelectionOption(data);
+
+                if (data.Tipo === 'Pianta') {
+                    // Aggiungi gli elementi alla griglia della flora se il tipo è "Pianta"
+                    floraGrid.appendChild(selectionOption);
+                } else {
+                    // Aggiungi gli elementi alla griglia della fauna
+                    faunaGrid.appendChild(selectionOption);
                 }
 
-                var selectionOption = createSelectionOption(data);
-                currentGrid.appendChild(selectionOption);
-
                 currentCellCount++;
+
+                if (currentCellCount === maxCells || index === specieData.length - 1) {
+                    // Se abbiamo raggiunto il massimo di celle o siamo all'ultimo elemento, passa alla colonna sottostante
+                    currentCellCount = 0;
+                    currentRowCount++;
+                }
             });
+
+            // Imposta l'altezza delle griglie in base al numero di righe
+            faunaGrid.style.gridTemplateRows = 'repeat(' + currentRowCount + ', 1fr)';
+            floraGrid.style.gridTemplateRows = 'repeat(' + currentRowCount + ', 1fr)';
+            
+            // Imposta il numero desiderato di colonne
+            var gridColumns = 'repeat(' + Math.min(maxCells, specieData.length) + ', 1fr)';
+            faunaGrid.style.gridTemplateColumns = gridColumns;
+            floraGrid.style.gridTemplateColumns = gridColumns;
         }
     };
 
     xhr.send();
 });
-    // Funzione per creare un elemento selection-option
-            function createSelectionOption(data) {
-                var selectionOption = document.createElement('div');
-                selectionOption.className = 'selection-option';
 
-                var img = document.createElement('img');
-                img.src = 'data:image/jpeg;base64,' + data.Img;
-                img.alt = data.NomeScientifico;
-                selectionOption.appendChild(img);
 
-                var selectionContent = document.createElement('div');
-                selectionContent.className = 'selection-content';
 
-                var label = document.createElement('label');
-                label.textContent = data.NomeScientifico;
-                selectionContent.appendChild(label);
 
-                var p = document.createElement('p');
-                p.textContent = data.Tipo;
-                selectionContent.appendChild(p);
+// Funzione per creare un elemento selection-option
+function createSelectionOption(data) {
+    var selectionOption = document.createElement('div');
+    selectionOption.className = 'selection-option';
 
-                var button = document.createElement('button');
-                button.className = 'custom-btn btn-4';
-                button.innerHTML = '<span>Scegli</span>';
-                selectionContent.appendChild(button);
+    var img = document.createElement('img');
+    img.src = 'data:image/jpeg;base64,' + data.Img;
+    img.alt = data.NomeScientifico;
+    img.style.width = '100%'; // Imposta la larghezza dell'immagine al 100%
+    selectionOption.appendChild(img);
 
-                selectionOption.appendChild(selectionContent);
+    var selectionContent = document.createElement('div');
+    selectionContent.className = 'selection-content';
 
-                return selectionOption;
-            }
+    var label = document.createElement('label');
+    label.textContent = data.NomeScientifico;
+    selectionContent.appendChild(label);
 
-            // Funzione per creare una nuova griglia di selezione
-            function createSelectionGrid(containerId) {     //Ricreo il Grid perché se no non worka
-                var container = document.getElementById(containerId);
-                var selectionGrid = document.createElement('div');
-                selectionGrid.className = 'selection-grid'; 
-                container.appendChild(selectionGrid);
-                return selectionGrid;
-            }
+    var p = document.createElement('p');
+    p.textContent = data.Tipo;
+    selectionContent.appendChild(p);
+
+    var button = document.createElement('button');
+    button.className = 'custom-btn btn-4';
+    button.innerHTML = '<span>Scegli</span>';
+    selectionContent.appendChild(button);
+
+    selectionOption.appendChild(selectionContent);
+
+    return selectionOption;
+}
+
+// Funzione per creare una nuova griglia di selezione
+function createSelectionGrid(containerId) {
+    console.log("Attempting to create grid for container with id:", containerId);
+    var container = document.getElementById(containerId);
+
+    // Verifica se l'elemento con l'id specificato esiste
+    if (!container) {
+        console.error("Container element not found:", containerId);
+        return null;
+    }
+
+    var selectionGrid = document.createElement('div');
+    selectionGrid.className = 'selection-grid';
+    selectionGrid.id = containerId + '-grid'; // Aggiunta dell'id
+    container.appendChild(selectionGrid);
+
+    console.log("Created grid with id:", selectionGrid.id);
+
+    return selectionGrid;
+}
     </script>
 </head>
 
@@ -104,6 +137,7 @@
         <div class="selection-grid" id="fauna-grid">
             <!-- Animal option 1 -->
         </div>
+    </div>
         
     <div class="selection-section" >
         <h3>Flora</h3>
