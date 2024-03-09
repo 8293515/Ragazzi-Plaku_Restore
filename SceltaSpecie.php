@@ -119,6 +119,131 @@ function createSelectionGrid(containerId) {
 
     return selectionGrid;
 }
+function createSelectionOption(data) {
+    var selectionOption = document.createElement('div');
+    selectionOption.className = 'selection-option';
+
+    var img = document.createElement('img');
+    img.src = 'data:image/jpeg;base64,' + data.Img;
+    img.alt = data.NomeScientifico;
+    img.style.width = '100%'; // Imposta la larghezza dell'immagine al 100%
+    selectionOption.appendChild(img);
+
+    var selectionContent = document.createElement('div');
+    selectionContent.className = 'selection-content';
+
+    var label = document.createElement('label');
+    label.textContent = data.NomeScientifico;
+    selectionContent.appendChild(label);
+
+    var p = document.createElement('p');
+    p.textContent = data.Tipo;
+    selectionContent.appendChild(p);
+
+    var button = document.createElement('button');
+    button.className = 'custom-btn btn-4';
+    button.innerHTML = '<span onclick="openModal(\'' + data.NomeScientifico + '\')">Scegli</span>';
+    selectionContent.appendChild(button);
+
+    selectionOption.appendChild(selectionContent);
+
+    return selectionOption;
+}
+
+// Funzione per aprire il modal e caricare i dati
+function openModal(nomeScientifico) {
+    var modal = document.getElementById('adoptModal');
+    modal.style.display = 'block';
+
+    // Esegui una chiamata AJAX per ottenere i dati dalla tabella biodiversita
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "caricadatibiodiversita.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var biodiversitaData = JSON.parse(xhr.responseText);
+
+            var adoptModalContent = document.getElementById('adoptModalContent');
+
+            // Trova i dati corrispondenti al nome scientifico
+           
+            
+            // Popola il contenuto del modal con i dati       
+            if (biodiversitaData && biodiversitaData.length > 0) {
+    var modalContent = ''; // Inizializza una stringa vuota per contenere il contenuto del modal
+
+    biodiversitaData.forEach(function (item) {
+      var modalItem = createModalItem(item);
+        modalContent += modalItem.outerHTML;
+    });
+
+    adoptModalContent.innerHTML = modalContent;
+}
+        }
+    };
+
+    // Invia la richiesta con il nome scientifico come parametro
+    xhr.send("NomeScientifico=" + encodeURIComponent(nomeScientifico));
+}
+
+// Funzione per chiudere il modal
+function closeModal() {
+    var modal = document.getElementById('adoptModal');
+    modal.style.display = 'none';
+}
+
+// Funzione per creare un elemento modal-item
+function createModalItem(data) {
+    var modalItem = document.createElement('div');
+    modalItem.className = 'modal-item';
+
+    var imgContainer = document.createElement('div');
+    imgContainer.className = 'modal-item-img-container';
+
+    var img = document.createElement('img');
+    img.src = 'data:image/jpeg;base64,' + data.ImgInd;
+    img.alt = data.NomeComune;
+    imgContainer.appendChild(img);
+
+    modalItem.appendChild(imgContainer);
+
+    var content = document.createElement('div');
+    content.className = 'modal-item-content';
+
+    var label = document.createElement('label');
+    label.textContent = data.NomeComune;
+    content.appendChild(label);
+
+    var p1 = document.createElement('p');
+    p1.textContent = 'Sesso: ' + data.Sesso;
+    content.appendChild(p1);
+
+    var p2 = document.createElement('p');
+    p2.textContent = 'Età: ' + data.Eta;
+    content.appendChild(p2);
+
+    var form = document.createElement('form');
+    form.onsubmit = function (event) {
+        event.preventDefault(); // Evita il comportamento predefinito del form
+        // Aggiungi qui la logica per l'adozione
+        // Puoi ottenere i dati da 'data' e fare la richiesta AJAX necessaria
+        // ...
+
+        // Chiudi il modal dopo l'adozione (esempio: closeModal());
+    };
+
+    var submitBtn = document.createElement('input');
+    submitBtn.type = 'submit';
+    submitBtn.value = 'Adotta';
+    submitBtn.className = 'modal-item-button'; // Aggiunta della classe per lo stile del pulsante
+    form.appendChild(submitBtn);
+
+    content.appendChild(form);
+    modalItem.appendChild(content);
+
+    return modalItem;
+}
     </script>
 </head>
 
@@ -164,6 +289,17 @@ function createSelectionGrid(containerId) {
         </div>
       </div>
     </div>
+   
+<!-- Modal -->
+<div id="adoptModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="adoptModalContent" class="modal-grid">
+            <!-- Contenuto iniziale del modal -->
+            <p>Caricamento...</p>
+        </div>
+    </div>
+</div>
   
   </body>
 </html>

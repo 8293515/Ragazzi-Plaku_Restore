@@ -257,3 +257,156 @@ button {
 .selection-button {
     margin-top: 10px; /* Aggiunto margine tra il testo e il pulsante */
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 68%;   /*Regola la posizione del modal*/
+    left: 50%;  /*Regola la posizione del modal*/
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 100%; /* Imposta la larghezza desiderata del modal */
+    max-width: 1200px; /* Imposta la larghezza massima del modal se necessario */
+    height: 100%; /* Imposta l'altezza desiderata del modal */
+    max-height: none; /* Imposta l'altezza massima del modal se necessario */
+    background: rgba(255, 255, 255, 0.5); /* Sfondo semitrasparente per l'overlay */
+    overflow-y:auto;
+}
+
+/* Stile per il contenuto del modal */
+.modal-content {
+    position: relative;
+    text-align: center;
+    max-height: none;
+    height:75%; /* Imposta l'altezza massima del modal */
+    width: 90%; /* Imposta la larghezza del modal al 90% della larghezza della finestra */
+    margin: auto; /* Centra il modal orizzontalmente */
+    padding: 20px; /* Aggiungi padding al contenuto del modal */
+    background-color: white; /* Sfondo bianco */
+    border-radius: 10px; /* Bordo arrotondato */
+}
+
+/* Immagine all'interno del modal */
+#adoptModalContent img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px; /* Aggiungi uno spazio inferiore all'immagine */
+}
+/* Aggiungi uno stile per la griglia interna del modal */
+
+/* Aggiungi uno stile per ciascun riquadro nella griglia del modal */
+.modal-item {
+    position: relative;
+    text-align: left;
+    border: 1px solid var(--dim-grey);
+    border-radius: 10px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    padding: 20px; /* Aumenta il padding */
+    margin: 10px; /* Aggiunto il margine */
+    
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+.modal-item-img-container {
+    width: 100%;
+    max-height: 150px; /* Regola l'altezza massima desiderata */
+    overflow: hidden;
+    text-align: center;
+}
+
+.modal-item-img-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Puoi regolare la dimensione del bordo se lo desideri */
+}
+
+
+
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Aggiorna lo stile per l'immagine all'interno del modal */
+
+#adoptModalContent .modal-item-img-container {
+    width: 200%;
+    max-height: 200%;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+}
+
+#adoptModalContent .modal-item-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+/* Posiziona l'immagine come in selection-option */
+#adoptModalContent .modal-item-img-container img {
+    max-width: 100%; /* Larghezza massima dell'immagine */
+    border-radius: 5px;
+}
+/* Aggiorna lo stile per la griglia interna del modal con scrolling */
+.modal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-height: 80vh; /* Imposta l'altezza massima della griglia interna */
+}
+
+/* Aggiungi stile per i riquadri del modal */
+.modal-item {
+    position: relative;
+    text-align: left;
+    border: 1px solid var(--dim-grey);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    padding: 20px; /* Aumenta il padding */
+    margin: 10px; /* Aggiunto il margine */
+}
+
+.modal-item img {
+    width: 100%; /* Larghezza massima dell'immagine */
+    border-radius: 5px;
+}
+
+
+.modal-item .modal-item-content {
+    flex: 1;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.modal-item-content label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width:150px;  /*Larghezza Scritte del Modal*/
+}
+
+
+.modal-item-content .modal-item-button {
+    margin-top: 10px;
+}
