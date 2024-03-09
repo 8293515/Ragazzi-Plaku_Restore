@@ -138,7 +138,7 @@ button {
 
 .selection-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
@@ -224,11 +224,7 @@ button {
     margin-top: 40px;
 }
 
-.selection-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 2fr);
-    gap: 20px;
-}
+
 
 .selection-option {
     position: relative;

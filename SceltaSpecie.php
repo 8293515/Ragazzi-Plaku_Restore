@@ -6,11 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina di selezione Animali e Piante</title>
     <link rel="stylesheet" href="SpecieStyle.css">
+    <?php include 'nav.php'; ?>
+    <script>
+       document.addEventListener("DOMContentLoaded", function () {
+    // Esegui una chiamata AJAX per ottenere le informazioni sulla specie dal server
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "generadatispecie.php", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var specieData = JSON.parse(xhr.responseText);
+            console.log(specieData);
+
+
+            // Crea la griglia della fauna
+            var faunaGrid = createSelectionGrid('fauna-grid');
+
+            // Crea la griglia della flora
+            var floraGrid = createSelectionGrid('flora-grid');
+
+            // Itera attraverso i dati e crea gli elementi
+            var maxCells = 3; // Massimo numero di celle per griglia
+            var currentGrid = faunaGrid; // Inizia con la griglia della fauna
+            var currentCellCount = 0;
+
+            specieData.forEach(function (data) {
+                if (currentCellCount === maxCells) {
+                    // Se abbiamo raggiunto il massimo di celle, passa a una nuova griglia
+                    currentGrid = currentGrid === faunaGrid ? createSelectionGrid('fauna-grid') : createSelectionGrid('flora-grid');
+                    currentCellCount = 0;
+                }
+
+                var selectionOption = createSelectionOption(data);
+                currentGrid.appendChild(selectionOption);
+
+                currentCellCount++;
+            });
+        }
+    };
+
+    xhr.send();
+});
+    // Funzione per creare un elemento selection-option
+            function createSelectionOption(data) {
+                var selectionOption = document.createElement('div');
+                selectionOption.className = 'selection-option';
+
+                var img = document.createElement('img');
+                img.src = 'data:image/jpeg;base64,' + data.Img;
+                img.alt = data.NomeScientifico;
+                selectionOption.appendChild(img);
+
+                var selectionContent = document.createElement('div');
+                selectionContent.className = 'selection-content';
+
+                var label = document.createElement('label');
+                label.textContent = data.NomeScientifico;
+                selectionContent.appendChild(label);
+
+                var p = document.createElement('p');
+                p.textContent = data.Tipo;
+                selectionContent.appendChild(p);
+
+                var button = document.createElement('button');
+                button.className = 'custom-btn btn-4';
+                button.innerHTML = '<span>Scegli</span>';
+                selectionContent.appendChild(button);
+
+                selectionOption.appendChild(selectionContent);
+
+                return selectionOption;
+            }
+
+            // Funzione per creare una nuova griglia di selezione
+            function createSelectionGrid(containerId) {     //Ricreo il Grid perché se no non worka
+                var container = document.getElementById(containerId);
+                var selectionGrid = document.createElement('div');
+                selectionGrid.className = 'selection-grid'; 
+                container.appendChild(selectionGrid);
+                return selectionGrid;
+            }
+    </script>
 </head>
 
 <body>
 
-    <?php include 'nav.php'; ?>
+  
 
 
     <div class="page-title-section">
@@ -23,32 +104,13 @@
   
     <div class="selection-section-top"></div>
   
-    <div class="selection-section">
+    <div class="selection-section" >
         <!-- Selection grid layout for animals and plants -->
         <h3>Fauna</h3>
-        <div class="selection-grid">
+        <div class="selection-grid" id="fauna-grid">
             <!-- Animal option 1 -->
-            <div class="selection-option">
-                <img src="images/panda3.jpg" alt="Animale 1">
-                <div class="selection-content">
-                    <label for="animal1">Animale 1</label>
-                    <p>aaaaaaaaaaaaaaaaaaaa
-                        aaaaaaaaaa
-                        aaaaaaaaaaaaaaaa
-                        </p>
-                    <button class="custom-btn btn-4"><span>Scegli</span></button>
-                </div>
-            </div>
+       
 
-            <!-- Animal option 2 -->
-            <div class="selection-option">
-                <img src="images/animal2.jpg" alt="Animale 2">
-                <div class="selection-content">
-                    <label for="animal2">Animale 2</label>
-                    <p>Descrizione dell'animale 2.</p>
-                    <button class="custom-btn btn-4"><span>Scegli</span></button>
-                </div>
-            </div>
     
             <!-- Altre opzioni... -->
 
@@ -56,33 +118,13 @@
             <!-- Altre opzioni... -->
         </div>
         
-    <div class="selection-section">
+    <div class="selection-section" >
         <h3>Flora</h3>
-        <div class="selection-grid">
+        <div class="selection-grid" id="flora-grid">
             <!-- Animal option 1 -->
-            <div class="selection-option">
-                <img src="images/Acacia.jpg" alt="Pianta 1">
-                <div class="selection-content">
-                    <label for="pianta1">Pianta 1</label>
-                    <p>aaaaaaaaaaaaaaaaaaaa
-                        aaaaaaaaaa
-                        aaaaaaaaaaaaaaaa
-                        </p>
-                    <button class="custom-btn btn-4"><span>Scegli</span></button>
-                </div>
-            </div>
+       
 
-            <div class="selection-option">
-                <img src="images/Pianta2.jpg" alt="Pianta 2">
-                <div class="selection-content">
-                    <label for="pianta2">Pianta 2</label>
-                    <p>aaaaaaaaaaaaaaaaaaaa
-                        aaaaaaaaaa
-                        aaaaaaaaaaaaaaaa
-                        </p>
-                    <button class="custom-btn btn-4"><span>Scegli</span></button>
-                </div>
-            </div>
+     
         </div>
     </div>
     

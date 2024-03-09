@@ -32,27 +32,39 @@
                     <img src="images/Parco-Artico.jpg" alt="ParcoArtico">
                     <label for="parcoartico">Parco Artico</label>
                     <p>Situato nel Sud della Nuova Zelanda accoglie diverse specie artiche.</p>
-                    <button class="custom-btn btn-4"><span>Scegli</span></button>
+                    <form method="post" action="DatiParco.php">
+                    <input type="hidden" value="Parco Artico" id="nomeparco" name="nomeparco">
+                    <input type="submit" value="Scegli" class="custom-btn btn-4">
+                    </form>
                 </div>
 
                 <!-- Animal option 2 -->
                 <div class="animal-option">
                     <img src="images/Parco-Savana.jpg" alt="Savana">
                     <label for="savana">Savana</label>
-                    <button class="custom-btn btn-4"><span>Scegli</span></button>
+                    <form method="post" action="DatiParco.php">
+                    <input type="hidden" value="Parco Savana" id="nomeparco" name="nomeparco">
+                    <input type="submit" value="Scegli" class="custom-btn btn-4">
+                    </form>
                 </div>
 
                 <!-- Animal option 3 (Add more as needed) -->
                 <div class="animal-option">
                     <img src="images/Parco-Giungla.jpg" alt="Giungla">
                     <label for="giungla">Giungla</label>
-                    <button class="custom-btn btn-4"><span>Scegli</span></button>
+                    <form method="post" action="DatiParco.php">
+                    <input type="hidden" value="Giungla" id="nomeparco" name="nomeparco">
+                    <input type="submit" value="Scegli" class="custom-btn btn-4">
+                    </form>
                 </div>
 
                 <div class="animal-option">
                     <img src="images/Parco-Alpino.jpg" alt="ParcoAlpino">
                     <label for="parcoalpino">Parco Alpino</label>
-                    <button class="custom-btn btn-4"><span>Scegli</span></button>
+                    <form method="post" action="DatiParco.php">
+                    <input type="hidden" value="Parco Alpino" id="nomeparco" name="nomeparco">
+                    <input type="submit" value="Scegli" class="custom-btn btn-4">
+                    </form>
                 </div>
             </div>
         </div>
