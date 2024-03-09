@@ -142,7 +142,7 @@ function createSelectionOption(data) {
 
     var button = document.createElement('button');
     button.className = 'custom-btn btn-4';
-    button.innerHTML = '<span onclick="openModal(\'' + data.NomeScientifico + '\')">Scegli</span>';
+    button.innerHTML = '<span onclick="openModalSpecie(\'' + data.NomeScientifico + '\')">Scegli</span>';
     selectionContent.appendChild(button);
 
     selectionOption.appendChild(selectionContent);
@@ -151,7 +151,7 @@ function createSelectionOption(data) {
 }
 
 // Funzione per aprire il modal e caricare i dati
-function openModal(nomeScientifico) {
+function openModalSpecie(nomeScientifico) {
     var modal = document.getElementById('adoptModal');
     modal.style.display = 'block';
 
@@ -188,7 +188,7 @@ function openModal(nomeScientifico) {
 }
 
 // Funzione per chiudere il modal
-function closeModal() {
+function closeModalSpecie() {
     var modal = document.getElementById('adoptModal');
     modal.style.display = 'none';
 }
@@ -293,7 +293,7 @@ function createModalItem(data) {
 <!-- Modal -->
 <div id="adoptModal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close" onclick="closeModalSpecie()">&times;</span>
         <div id="adoptModalContent" class="modal-grid">
             <!-- Contenuto iniziale del modal -->
             <p>Caricamento...</p>
