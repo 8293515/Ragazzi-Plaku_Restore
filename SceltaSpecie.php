@@ -90,17 +90,11 @@
 </head>
 
 <body>
-
-  
-
-
     <div class="page-title-section">
       <div class="container">
         <h2 class="page-title">Selezione Animale e Pianta</h2>
       </div>
     </div>
-  
-    
   
     <div class="selection-section-top"></div>
   
@@ -109,22 +103,11 @@
         <h3>Fauna</h3>
         <div class="selection-grid" id="fauna-grid">
             <!-- Animal option 1 -->
-       
-
-    
-            <!-- Altre opzioni... -->
-
-    
-            <!-- Altre opzioni... -->
         </div>
         
     <div class="selection-section" >
         <h3>Flora</h3>
         <div class="selection-grid" id="flora-grid">
-            <!-- Animal option 1 -->
-       
-
-     
         </div>
     </div>
     
