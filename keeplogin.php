@@ -2,9 +2,10 @@
 session_start();
 
 $sessionInfo = array(
-    'isLoggedIn' => $_SESSION['loggedin'],
+    'isLoggedIn' => isset($_SESSION['loggedin']) && $_SESSION['loggedin'],
     'img' => $_SESSION['image'],
-    'imginfo' => $_SESSION['imageinfo']
+    'imginfo' => $_SESSION['imageinfo'],
+    'isAdmin' => $_SESSION['isAdmin']
 );
 
 header('Content-Type: application/json');

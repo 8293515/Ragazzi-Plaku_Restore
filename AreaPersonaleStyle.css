@@ -64,9 +64,6 @@ h3 {
     border: 1px solid var(--dim-grey);
 }
 
-.species-item:hover {
-    background-color: var(--dim-grey);
-}
 
 /* Adopt button styling */
 .custom-btn {
@@ -233,3 +230,19 @@ h3 {
     height: auto; /* Mantieni l'aspetto proporzionato */
     border-radius: 5px; /* Aggiungi una piccola cornice arrotondata */
 }
+
+
+.campo-info {
+    font-weight: bold;
+  }
+  
+  .modifica-link {
+    color: #007BFF; /* Colore del link */
+    cursor: pointer;
+    text-decoration: underline;
+    margin-left: 10px; /* Aggiungi un margine sinistro per separare il link dal testo */
+  }
+  
+  .modifica-link:hover {
+    text-decoration: none; /* Rimuovi l'effetto di sottolineatura al passaggio del mouse */
+  }

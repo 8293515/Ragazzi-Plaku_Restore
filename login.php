@@ -28,9 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['username'] = $row['Email'];
         $_SESSION['image'] = $base64img;
         $_SESSION['imageinfo'] = $imageInfo;
-        if($amministratore == 1){
-            $_SESSION['isAdmin'] = true;
-        }
+        $_SESSION['isAdmin'] = $amministratore;
 
         $response = array("success" => true, "img" => $base64img , "imginfo" => $imageType);
     } 

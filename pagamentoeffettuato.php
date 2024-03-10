@@ -33,10 +33,11 @@ if ($stmt === false) {
 
 // Binding dei parametri
 $stmt->bind_param("ssss", $emailCliente, $id_bio, $nomeProprio, $importo);
+
 $sqlUpdate = "UPDATE biodiversita SET disponibile = 0 WHERE Id_Bio = ?";
 $stmtUpdate = $conn->prepare($sqlUpdate);
-$stmtUpdate->bind_param("s", $id_bio);
-
+$stmtUpdate->bind_param("i", $id_bio);
+$stmtUpdate->execute();
 // Esecuzione dello statement
 if ($stmt->execute() === TRUE) {
     header("Location:index.php");

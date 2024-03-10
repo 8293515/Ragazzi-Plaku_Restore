@@ -13,7 +13,7 @@
 
             if (sessionInfo.isLoggedIn) {
                 // L'utente è loggato, aggiorna il bottone di login
-                updateLoginButton(sessionInfo.img, sessionInfo.imginfo);
+                updateLoginButton(sessionInfo.img, sessionInfo.imginfo,sessionInfo.isAdmin);
             }
         }
     };
@@ -36,7 +36,7 @@
             <div class="cart-nav-wrapper">
               <nav role="navigation" class="nav-menu w-nav-menu">
                 <a href="index.php" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
-                <a href="InfoRestore.php" class="nav-link w-nav-link">Info</a>
+                <a href="infoRestore.php" class="nav-link w-nav-link">Info</a>
                 <a href="SceltaParco.php" class="nav-link w-nav-link">Adotta</a>
                 <a href="/donations" class="nav-link w-nav-link">Iscrizioni</a>
                 <button onclick="openModal()" class="nav-link w-nav-link login-button" id="loginbutton">Login</button>
@@ -77,9 +77,9 @@
     <div class="w3-modal-content">
         <div class="w3-container">
         <button onclick="closeProfileModal()" class="w3-button w3-display-topright">&times;</button>
+        <h2>Area Personale</h2>
+        <button  class="btn profile-btn" id="AP">Area Personale</button>
           <form method="POST" action="logout.php">
-            <h2>Area Personale</h2>
-            <a class="btn profile-btn" href="AreaPersonale.php">Area Personale</a>
             <input type="submit" class="btn login-btn" class="btn profile-btn" value="Logout">
           </form>
         </div>
@@ -146,8 +146,10 @@
     return false;
 }
 
-function updateLoginButton(imgBase64,imgInfo) {
+function updateLoginButton(imgBase64,imgInfo,isAdmin) {
+    var areaPersonaleButton = document.getElementById('AP'); 
     var loginButton = document.querySelector('.login-button');
+ 
     if (loginButton) {
         // Rimuovi il contenuto esistente e abilita l'immagine di sfondo
         loginButton.innerHTML = "";
@@ -158,7 +160,16 @@ function updateLoginButton(imgBase64,imgInfo) {
         loginButton.style.borderRadius = "50%";
         loginButton.style.width = "50px"; // Imposta la larghezza del cerchio
         loginButton.style.height = "50px"; // Imposta l'altezza del cerchio
-        
+        if(isAdmin==1){
+          areaPersonaleButton.onclick = function () {
+                window.location.href = 'AreaAmministratore.php';
+            };
+        }
+        else{
+          areaPersonaleButton.onclick = function () {
+                window.location.href = 'AreaPersonale.php';
+        }
+      }
 
     }
 }
