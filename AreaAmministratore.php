@@ -2,10 +2,7 @@
 <html lang="en">
 <link rel="stylesheet" href="AreaAmministratoreStyle.css">
 <head>
-    <!-- ... (come prima) -->
     <script>
-        // ... (come prima)
-
         function deleteSpecie(specieId) {
             var confirmDelete = confirm("Sei sicuro di voler eliminare questa specie?");
             if (confirmDelete) {
@@ -58,9 +55,7 @@
             xhr.send();
         }
 
-        // ... (come prima)
     </script>
-    <!-- ... (come prima) -->
 </head>
 
 <body>
