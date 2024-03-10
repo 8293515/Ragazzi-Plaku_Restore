@@ -59,21 +59,5 @@
         </div>
       </div>
     </div>
-    <div class="footer">
-      <div class="container">
-        <div class="footer-wrapper">
-          <div class="footer-logo-column">
-            <a href="/" aria-current="page" class="w-inline-block w--current"><img src="images/[removal.ai]_d1ffefac-a7c4-4aea-b9cd-0cb9642791d6-restore.png" alt="" width="149"></a>
-          </div>
-          <div>
-            <a href="/" target="_blank" class="social-footer-link w-inline-block"><img src="images/Twitter_Social_Icon_Rounded_Square_White.svg" width="30" alt="Twitter Logo"></a>
-            <a href="/" class="social-footer-link w-inline-block"><img src="images/Facebook Logo.svg" width="30" alt="Facebook Logo"></a>
-            <a href="/" target="_blank" class="social-footer-link w-inline-block"><img src="images/Insta.svg" width="30" alt="Instagram Logo"></a>
-          </div>
-        </div>
-        <div class="footer-bottom-wrapper">
-          <div class="small footer-small"><br>‍</div>
-        </div>
-      </div>
-    </div>
+    <?php include 'footer.html';?>
    

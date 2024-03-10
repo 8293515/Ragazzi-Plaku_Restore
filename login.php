@@ -21,12 +21,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imageInfo = getimagesizefromstring($row['img']);
         $imageType = $imageInfo['mime'];
         $base64img = base64_encode($row['img']);
+        $amministratore = $row['Amministratore'];
 
         // Imposta le informazioni dell'utente nella sessione
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $row['Email'];
         $_SESSION['image'] = $base64img;
         $_SESSION['imageinfo'] = $imageInfo;
+        if($amministratore == 1){
+            $_SESSION['isAdmin'] = true;
+        }
 
         $response = array("success" => true, "img" => $base64img , "imginfo" => $imageType);
     } 

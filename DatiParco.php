@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $imageType = $imageInfo['mime'];
             $base64img = base64_encode($row['ImgSpecie']);
             $datispecie[]=[
+                'IdBio'=>$row['Id_Bio'],
                 'NomeScientifico' => $row['NomeScientifico'],
                 'Tipo' => $row['Tipo'],
                 'Img' => $base64img

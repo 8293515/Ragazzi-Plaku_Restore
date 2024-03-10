@@ -194,6 +194,7 @@ function closeModalSpecie() {
 }
 
 // Funzione per creare un elemento modal-item
+// Funzione per creare un elemento modal-item
 function createModalItem(data) {
     var modalItem = document.createElement('div');
     modalItem.className = 'modal-item';
@@ -224,11 +225,19 @@ function createModalItem(data) {
     content.appendChild(p2);
 
     var form = document.createElement('form');
+    form.action = 'pagamento.php';  // Specifica il percorso del file PHP a cui inviare i dati
+    form.method = 'post';
     form.onsubmit = function (event) {
         event.preventDefault(); // Evita il comportamento predefinito del form
         // Aggiungi qui la logica per l'adozione
         // Puoi ottenere i dati da 'data' e fare la richiesta AJAX necessaria
-        // ...
+
+        // Aggiungi l'input nascosto con l'ID biodiversità
+        var hiddenInput = document.createElement('input');
+        hiddenInput.type = 'hidden';
+        hiddenInput.name = "id_bio"; // Cambia il nome del campo se necessario
+        hiddenInput.value = data.IdBio; // Sostituisci 'IDBio' con il nome corretto del campo nell'oggetto 'data'
+        form.appendChild(hiddenInput);
 
         // Chiudi il modal dopo l'adozione (esempio: closeModal());
     };
@@ -236,7 +245,7 @@ function createModalItem(data) {
     var submitBtn = document.createElement('input');
     submitBtn.type = 'submit';
     submitBtn.value = 'Adotta';
-    submitBtn.className = 'modal-item-button'; // Aggiunta della classe per lo stile del pulsante
+    submitBtn.className = 'custom-btn btn-4'; // Aggiunta della classe per lo stile del pulsante
     form.appendChild(submitBtn);
 
     content.appendChild(form);

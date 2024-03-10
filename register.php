@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email-2'];
     $psw = $_POST['password']; // Assicurati che il campo di input sia correttamente denominato
     $image = $_FILES["myfile"]["tmp_name"];
+    $amministratore = 0;
     if (empty($image)) {
         die("Please choose a file to upload.");
     }
@@ -26,8 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $imageData = mysqli_real_escape_string($conn, $imageData);
 
     // Esegui l'inserimento dei dati nel database utilizzando statement preparati
-    $sql = $conn->prepare("INSERT INTO clienti (Email, Psw, Nome, Cognome,img) VALUES (?, ?, ?, ?,?)");
-    $sql->bind_param("ssssb", $email, $psw, $nome, $cognome,$imageData);
+    $sql = $conn->prepare("INSERT INTO clienti (Email, Psw, Nome, Cognome,img,Amministratore) VALUES (?, ?, ?, ?,?,?)");
+    $sql->bind_param("ssssbd", $email, $psw, $nome, $cognome,$imageData,$amministratore);
     mysqli_stmt_send_long_data($sql, 4, file_get_contents($image));
 
     if ($sql->execute()) {
