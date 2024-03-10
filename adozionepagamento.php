@@ -29,7 +29,7 @@ $stmt->execute();
  
 
 // Chiudi la connessione al database
-$connessione = null; 
+mysqli_close($conn);
 ?>
 
 

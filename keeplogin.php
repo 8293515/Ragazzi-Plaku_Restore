@@ -2,7 +2,7 @@
 session_start();
 
 $sessionInfo = array(
-    'isLoggedIn' => isset($_SESSION['loggedin']) && $_SESSION['loggedin'],
+    'isLoggedIn' => $_SESSION['loggedin'],
     'img' => $_SESSION['image'],
     'imginfo' => $_SESSION['imageinfo']
 );

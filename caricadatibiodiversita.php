@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nomeScientifico = $_POST['NomeScientifico'];
 
     // Prepara la query per ottenere i dati dalla tabella biodiversita
-    $query = "SELECT * FROM biodiversita WHERE Specie = ?";
+    $query = "SELECT *,S.Tipo FROM biodiversita INNER JOIN Specie S ON biodiversita.specie = S.NomeScientifico WHERE biodiversita.Specie = ? AND disponibile = 1";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $nomeScientifico);
     $stmt->execute();
@@ -32,10 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $imageType = $imageInfo['mime'];
         $base64img = base64_encode($row['ImgInd']);
         $datiindividui[] = [
+            'IdBio' => $row['Id_Bio'],
             'NomeComune' => $row['Nome_Comune'],
             'Sesso' => $row['Sesso'],
             'Eta' => $row['Età'],
-            'ImgInd' => $base64img
+            'ImgInd' => $base64img,
+            'Specie' => $row['Specie'],
+            'Tipo' => $row['Tipo'],
+            'Importo' => $row['CostoAdozione']
         ];
     }
 

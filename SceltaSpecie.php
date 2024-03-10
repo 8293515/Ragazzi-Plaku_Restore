@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+      session_start();
+    // Controllo se la query string "login_required" è presente
+    if (!isset($_SESSION['loggedin'])) {
+        // Script JavaScript per mostrare un alert
+        echo '<script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    alert("Devi effettuare il login per poter adottare!");
+                });
+              </script>';
+    }
+    ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -162,30 +173,34 @@ function openModalSpecie(nomeScientifico) {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            var biodiversitaData = JSON.parse(xhr.responseText);
+        var biodiversitaData = JSON.parse(xhr.responseText);
 
-            var adoptModalContent = document.getElementById('adoptModalContent');
+        var adoptModalContent = document.getElementById('adoptModalContent');
 
-            // Trova i dati corrispondenti al nome scientifico
-           
-            
-            // Popola il contenuto del modal con i dati       
-            if (biodiversitaData && biodiversitaData.length > 0) {
-    var modalContent = ''; // Inizializza una stringa vuota per contenere il contenuto del modal
+        // Trova i dati corrispondenti al nome scientifico
+        // ...
 
-    biodiversitaData.forEach(function (item) {
-      var modalItem = createModalItem(item);
-        modalContent += modalItem.outerHTML;
-    });
+        // Popola il contenuto del modal con i dati       
+        if (biodiversitaData && biodiversitaData.length > 0) {
+            var modalContent = ''; // Inizializza una stringa vuota per contenere il contenuto del modal
 
-    adoptModalContent.innerHTML = modalContent;
-}
+            biodiversitaData.forEach(function (item) {
+                var modalItem = createModalItem(item);
+                modalContent += modalItem.outerHTML;
+            });
+
+            adoptModalContent.innerHTML = modalContent;
+        } else {
+            // Se biodiversitaData è vuoto, mostra un messaggio nel modal
+            adoptModalContent.innerHTML = '<p>Non ci sono animali di questa specie da adottare.</p>';
         }
-    };
+    }
+};
 
     // Invia la richiesta con il nome scientifico come parametro
     xhr.send("NomeScientifico=" + encodeURIComponent(nomeScientifico));
 }
+
 
 // Funzione per chiudere il modal
 function closeModalSpecie() {
@@ -216,36 +231,41 @@ function createModalItem(data) {
     label.textContent = data.NomeComune;
     content.appendChild(label);
 
-    var p1 = document.createElement('p');
-    p1.textContent = 'Sesso: ' + data.Sesso;
-    content.appendChild(p1);
+    // Verifica il tipo prima di aggiungere il sesso
+    if (data.Tipo == 'Animale') {
+        var p1 = document.createElement('p');
+        p1.textContent = 'Sesso: ' + data.Sesso;
+        content.appendChild(p1);
+    }
 
     var p2 = document.createElement('p');
     p2.textContent = 'Età: ' + data.Eta;
     content.appendChild(p2);
 
+    var p3 = document.createElement('p');
+    p3.textContent = 'Costo Adozione: ' + data.Importo +'';
+    content.appendChild(p3);
+    // Creazione del form
     var form = document.createElement('form');
-    form.action = 'pagamento.php';  // Specifica il percorso del file PHP a cui inviare i dati
+    form.action = 'logincheck.php';
     form.method = 'post';
-    form.onsubmit = function (event) {
-        event.preventDefault(); // Evita il comportamento predefinito del form
-        // Aggiungi qui la logica per l'adozione
-        // Puoi ottenere i dati da 'data' e fare la richiesta AJAX necessaria
 
-        // Aggiungi l'input nascosto con l'ID biodiversità
-        var hiddenInput = document.createElement('input');
-        hiddenInput.type = 'hidden';
-        hiddenInput.name = "id_bio"; // Cambia il nome del campo se necessario
-        hiddenInput.value = data.IdBio; // Sostituisci 'IDBio' con il nome corretto del campo nell'oggetto 'data'
-        form.appendChild(hiddenInput);
-
-        // Chiudi il modal dopo l'adozione (esempio: closeModal());
-    };
+    // Creazione dell'input nascosto e aggiunta al form
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            var hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = key;
+            hiddenInput.value = data[key];
+            form.appendChild(hiddenInput);
+        }
+    }
 
     var submitBtn = document.createElement('input');
     submitBtn.type = 'submit';
     submitBtn.value = 'Adotta';
-    submitBtn.className = 'custom-btn btn-4'; // Aggiunta della classe per lo stile del pulsante
+    submitBtn.className = 'custom-btn btn-4';
+
     form.appendChild(submitBtn);
 
     content.appendChild(form);
@@ -254,6 +274,7 @@ function createModalItem(data) {
     return modalItem;
 }
     </script>
+
 </head>
 
 <body>
@@ -281,23 +302,7 @@ function createModalItem(data) {
     
     <br><br><br>
   
-    <div class="footer">
-      <div class="container">
-        <div class="footer-wrapper">
-          <div class="footer-logo-column">
-            <a href="/" aria-current="page" class="w-inline-block w--current"><img src="images/[removal.ai]_d1ffefac-a7c4-4aea-b9cd-0cb9642791d6-restore.png" alt="" width="149"></a>
-          </div>
-          <div>
-            <a href="/" target="_blank" class="social-footer-link w-inline-block"><img src="images/Twitter_Social_Icon_Rounded_Square_White.svg" width="30" alt="Twitter Logo"></a>
-            <a href="/" class="social-footer-link w-inline-block"><img src="images/Facebook Logo.svg" width="30" alt="Facebook Logo"></a>
-            <a href="/" target="_blank" class="social-footer-link w-inline-block"><img src="images/Insta.svg" width="30" alt="Instagram Logo"></a>
-          </div>
-        </div>
-        <div class="footer-bottom-wrapper">
-          <div class="small footer-small"><br>‍</div>
-        </div>
-      </div>
-    </div>
+    <?php include 'footer.html';?>
    
 <!-- Modal -->
 <div id="adoptModal" class="modal">

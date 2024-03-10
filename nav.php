@@ -36,7 +36,7 @@
             <div class="cart-nav-wrapper">
               <nav role="navigation" class="nav-menu w-nav-menu">
                 <a href="index.php" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
-                <a href="/about" class="nav-link w-nav-link">Info</a>
+                <a href="info.html" class="nav-link w-nav-link">Info</a>
                 <a href="SceltaParco.php" class="nav-link w-nav-link">Adotta</a>
                 <a href="/donations" class="nav-link w-nav-link">Iscrizioni</a>
                 <button onclick="openModal()" class="nav-link w-nav-link login-button" id="loginbutton">Login</button>
