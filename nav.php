@@ -36,7 +36,7 @@
             <div class="cart-nav-wrapper">
               <nav role="navigation" class="nav-menu w-nav-menu">
                 <a href="index.php" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
-                <a href="info.html" class="nav-link w-nav-link">Info</a>
+                <a href="InfoRestore.php" class="nav-link w-nav-link">Info</a>
                 <a href="SceltaParco.php" class="nav-link w-nav-link">Adotta</a>
                 <a href="/donations" class="nav-link w-nav-link">Iscrizioni</a>
                 <button onclick="openModal()" class="nav-link w-nav-link login-button" id="loginbutton">Login</button>
@@ -79,7 +79,7 @@
         <button onclick="closeProfileModal()" class="w3-button w3-display-topright">&times;</button>
           <form method="POST" action="logout.php">
             <h2>Area Personale</h2>
-            <button onclick="goToPersonalArea()" class="btn profile-btn">Area Personale</button>
+            <a class="btn profile-btn" href="AreaPersonale.php">Area Personale</a>
             <input type="submit" class="btn login-btn" class="btn profile-btn" value="Logout">
           </form>
         </div>

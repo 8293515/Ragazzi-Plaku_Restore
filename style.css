@@ -1,691 +1,694 @@
 :root {
-    --restore-green: #00c04b;
-    --white-smoke: #f9f9f9;
-    --black: #222;
-    --dim-grey: #525252;
-    --brown: #ab4040;
-    --gold: #ffde03;
-    --red: #e53935;
-    --steel-blue: #1976d2;
-    --medium-sea-green: #20c788;
-  }
-  
- 
-  
-  body {
-    color: #333;
-    font-family: Sen, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 36px;
-  }
-  
-  a {
-    color: var(--restore-green);
-    text-decoration: none;
+  --restore-green: #00c04b;
+  --white-smoke: #f9f9f9;
+  --black: #222;
+  --dim-grey: #525252;
+  --brown: #ab4040;
+  --gold: #ffde03;
+  --red: #e53935;
+  --steel-blue: #1976d2;
+  --medium-sea-green: #20c788;
+}
 
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  
-  ul {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding-left: 40px;
-  }
-  
-  li {
-    margin-bottom: 25px;
-  }
-  
-  label {
-    margin-bottom: 5px;
-    font-weight: 400;
-    display: block;
-  }
-  
-  blockquote {
-    border-left: 5px solid var(--restore-green);
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    font-size: 25px;
-    font-weight: 800;
-    line-height: 1.5;
-  }
-  
-  .banner {
-    width: 100%;
-    color: var(--white-smoke);
-    background-color: #222;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-  }
-  
 
-  
-  .btn {
-    border: 1px solid var(--restore-green);
-    background-color: var(--restore-green);
-    border-radius: 5px;
-    padding: 5px 25px;
-    font-weight: 700;
-    transition: border-color .3s, background-color .3s;
-  }
-  
-  .btn:hover, .btn.dark {
-    border-color: var(--black);
-    background-color: var(--black);
-  }
-  
-  .btn.dark:hover {
-    border-color: var(--restore-green);
-    background-color: var(--restore-green);
-  }
-  
-  .btn.dark.outline {
-    border-color: var(--black);
-    color: var(--black);
-  }
-  .btn.dark.outline:hover {
-    border-color: var(--black);
-    background-color: var(--black);
-  }
-  .btn.dark.outline.cat-menu {
-    width: 100%;
-  }
-  .btn.dark.outline.cat-menu.w--current {
-    background-color: var(--black);
-    color: var(--white-smoke);
-  }
-  .btn.light {
-    border-color: var(--white-smoke);
-    background-color: var(--white-smoke);
-    color: var(--black);
-  }
-  .btn.light:hover {
-    border-color: var(--restore-green);
-    background-color: var(--restore-green);
-    color: var(--white-smoke);
-  }
-  .btn.light.outline {
-    color: var(--white-smoke);
-  }
-  .btn.light.outline:hover {
-    border-color: var(--white-smoke);
-    background-color: var(--white-smoke);
-    color: var(--black);
-  }
-  .btn.light.hero {
-    margin-right: 10px;
-  }
-  
-  .btn.outline {
-    color: var(--restore-green);
-    background-color: rgba(0, 0, 0, 0);
-  }
-  .btn.outline:hover {
-    border-color: var(--restore-green);
-    background-color: var(--restore-green);
-    color: var(--white-smoke);
-  }
-  
-  .btn.outline:focus {
-    border: 1px solid var(--restore-green);
-    box-shadow: 0 0 2px 0 var(--restore-green);
-  }
-  
-  .separator {
-    height: 1px;
-    background-color: var(--dim-grey);
-    margin-bottom: 20px;
-  }
-  .small {
-    margin-bottom: 10px;
-    font-size: 10px;
-  }
-  
-  .small.caps {
-    text-transform: uppercase;
-  }
-  
-  .small.footer-small {
-    font-size: 12px;
-  }
-  
-  .page-title-section {
-    background-color: var(--black);
-    color: var(--white-smoke);
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  .container.contact {
-    position: absolute;
-    top: 0%;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
-  }
-  
-  .page-title {
-    margin-top: 10px;
-  }
-    .hero-section {
-      min-height: 550px;
-      background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('images/3840x2160-px-Alberta-Alberta-National-Park-Canada-forest-Glacial-Lake-1410065-wallhere.com.jpg');
-      background-position: 0 0, 50%;
-      background-size: auto, cover;
-    }
-    
-    .hero-section.about-hero {
-      background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('../images/felix-rostig-UmV2wr-Vbq8-unsplash.jpg');
-      background-position: 0 0, 50% 60%;
-      background-size: auto, cover;
-    }
-    
-    .hero-section.contact-hero {
-      background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('../images/adam-solomon-WHUDOzd5IYU-unsplash-1-1.jpg');
-      background-position: 0 0, 50%;
-      background-size: auto, cover;
-    }
-  
-  .menu-wrapper {
-    z-index: 900;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-  }
-  
-  .navbar {
-    background-color: var(--restore-green);
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  
-  .nav-link {
-    color: var(--white-smoke);
-    border-radius: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 4px 10px;
-    transition: all .3s;
-  }
-  
-  .nav-link:hover {
-    background-color: var(--black);
-    background-image: none;
-  }
-  
-  .nav-link.w--current {
-    color: var(--white-smoke);
-  }
-  
-  .nav-wrapper {
-    color: #abf7b1;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-  }
-  
-  .hero-wrapper {
+
+body {
+  color: #333;
+  font-family: Sen, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+a {
+  color: var(--restore-green);
+  text-decoration: none;
+
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+ul {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-left: 40px;
+}
+
+li {
+  margin-bottom: 25px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 400;
+  display: block;
+}
+
+blockquote {
+  border-left: 5px solid var(--restore-green);
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.banner {
+  width: 100%;
+  color: var(--white-smoke);
+  background-color: #222;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.btn {
+  border: 1px solid var(--restore-green);
+  background-color: var(--restore-green);
+  border-radius: 5px;
+  padding: 5px 25px;
+  font-weight: 700;
+  transition: border-color .3s, background-color .3s;
+}
+
+.btn:hover, .btn.dark {
+  border-color: var(--black);
+  background-color: var(--black);
+}
+
+.btn.dark:hover {
+  border-color: var(--restore-green);
+  background-color: var(--restore-green);
+}
+
+.btn.dark.outline {
+  border-color: var(--black);
+  color: var(--black);
+}
+.btn.dark.outline:hover {
+  border-color: var(--black);
+  background-color: var(--black);
+}
+.btn.dark.outline.cat-menu {
+  width: 100%;
+}
+.btn.dark.outline.cat-menu.w--current {
+  background-color: var(--black);
+  color: var(--white-smoke);
+}
+.btn.light {
+  border-color: var(--white-smoke);
+  background-color: var(--white-smoke);
+  color: var(--black);
+}
+.btn.light:hover {
+  border-color: var(--restore-green);
+  background-color: var(--restore-green);
+  color: var(--white-smoke);
+}
+.btn.light.outline {
+  color: var(--white-smoke);
+}
+.btn.light.outline:hover {
+  border-color: var(--white-smoke);
+  background-color: var(--white-smoke);
+  color: var(--black);
+}
+.btn.light.hero {
+  margin-right: 10px;
+}
+
+.btn.outline {
+  color: var(--restore-green);
+  background-color: rgba(0, 0, 0, 0);
+}
+.btn.outline:hover {
+  border-color: var(--restore-green);
+  background-color: var(--restore-green);
+  color: var(--white-smoke);
+}
+
+.btn.outline:focus {
+  border: 1px solid var(--restore-green);
+  box-shadow: 0 0 2px 0 var(--restore-green);
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--dim-grey);
+  margin-bottom: 20px;
+}
+.small {
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+
+.small.caps {
+  text-transform: uppercase;
+}
+
+.small.footer-small {
+  font-size: 12px;
+}
+
+.page-title-section {
+  background-color: var(--black);
+  color: var(--white-smoke);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container.contact {
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+
+.page-title {
+  margin-top: 10px;
+}
+  .hero-section {
     min-height: 550px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    display: flex;
-  }
-  
-  .hero-heading {
-    width: 35%;
-    color: var(--white-smoke);
-    font-size: 62px;
-    line-height: 1.2;
-  }
-  
-  .hero-heading.anout-hero-heading {
-    width: 40%;
-  }
-  
-  .hero-paragraph {
-    width: 35%;
-    color: var(--white-smoke);
-    margin-bottom: 25px;
-    font-size: 18px;
-  }
-  
-  .support-section {
-    padding-top: 65px;
-    padding-bottom: 65px;
-  }
-  
-  .support-top-wrapper {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    display: flex;
-  }
-  
-  .support-top-left {
-    flex-direction: column;
-    display: flex;
-  }
-  
-  .support-top-details-text {
-    text-transform: uppercase;
-  }
-  
-  .support-top-heading {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 40px;
-    line-height: 1.2;
-  }
-  
-  .support-top-right {
-    width: 45%;
-  }
-  
-  .support-wrapper {
-    justify-content: space-between;
-    display: flex;
-  }
-
-  
-  .safe-section {
-    min-height: 550px;
-    background-image: linear-gradient(to bottom, rgba(34, 34, 34, .17), var(--black)), url('images/bigtree.jpg');
+    background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('images/3840x2160-px-Alberta-Alberta-National-Park-Canada-forest-Glacial-Lake-1410065-wallhere.com.jpg');
     background-position: 0 0, 50%;
     background-size: auto, cover;
   }
   
-  .safe-wrapper {
-    min-height: 550px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    display: flex;
+  .hero-section.about-hero {
+    background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('../images/felix-rostig-UmV2wr-Vbq8-unsplash.jpg');
+    background-position: 0 0, 50% 60%;
+    background-size: auto, cover;
   }
   
-  .safe-heading {
-    width: 45%;
-    color: var(--white-smoke);
-    text-align: right;
-    font-size: 45px;
-    line-height: 1.2;
+  .hero-section.contact-hero {
+    background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('../images/adam-solomon-WHUDOzd5IYU-unsplash-1-1.jpg');
+    background-position: 0 0, 50%;
+    background-size: auto, cover;
   }
-  
-  .safe-paragraph {
-    width: 35%;
-    color: var(--white-smoke);
-    text-align: right;
-    margin-bottom: 25px;
-    font-size: 18px;
-  }
-  
 
-  
-  .shop-top-wrapper {
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    display: flex;
+.menu-wrapper {
+  z-index: 900;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.navbar {
+  background-color: var(--restore-green);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.nav-link {
+  color: var(--white-smoke);
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 4px 10px;
+  transition: all .3s;
+}
+
+.nav-link:hover {
+  background-color: var(--black);
+  background-image: none;
+}
+
+.nav-link.w--current {
+  color: var(--white-smoke);
+}
+
+.nav-wrapper {
+  color: #abf7b1;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.hero-wrapper {
+  min-height: 550px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+
+.hero-heading {
+  width: 35%;
+  color: var(--white-smoke);
+  font-size: 62px;
+  line-height: 1.2;
+}
+
+.hero-heading.anout-hero-heading {
+  width: 40%;
+}
+
+.hero-paragraph {
+  width: 35%;
+  color: var(--white-smoke);
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.support-section {
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.support-top-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.support-top-left {
+  flex-direction: column;
+  display: flex;
+}
+
+.support-top-details-text {
+  text-transform: uppercase;
+}
+
+.support-top-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.support-top-right {
+  width: 45%;
+}
+
+.support-wrapper {
+  justify-content: space-between;
+  display: flex;
+}
+
+
+.safe-section {
+  min-height: 550px;
+  background-image: linear-gradient(to bottom, rgba(34, 34, 34, .17), var(--black)), url('images/bigtree.jpg');
+  background-position: 0 0, 50%;
+  background-size: auto, cover;
+}
+
+.safe-wrapper {
+  min-height: 550px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+}
+
+.safe-heading {
+  width: 45%;
+  color: var(--white-smoke);
+  text-align: right;
+  font-size: 45px;
+  line-height: 1.2;
+}
+
+.safe-paragraph {
+  width: 35%;
+  color: var(--white-smoke);
+  text-align: right;
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+
+
+.shop-top-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.shop-item-wrapper {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.shop-image {
+  min-height: 500px;
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg');
+  background-position: 50%;
+  background-size: cover;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.shop-image.tumbler-1 {
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg');
+  background-position: 50%;
+  background-size: cover;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.shop-image.tumbler-1.narrow-list {
+  min-height: 400px;
+}
+
+.shop-image.tumbler-1 {
+  background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg');
+  background-position: 50%;
+  background-size: cover;
+}
+
+.shop-details-wrapper {
+  justify-content: space-between;
+  display: flex;
+}
+
+.shop-details-left {
+  width: 100%;
+}
+
+.shop-item-name {
+  color: var(--black);
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.shop-item-price {
+  color: var(--black);
+  text-align: left;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.shop-item-price.compare {
+  color: var(--restore-green);
+  text-decoration: line-through;
+}
+
+.shop-local-section {
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.shop-local-wrapper {
+  min-height: 500px;
+  justify-content: flex-end;
+  display: flex;
+  position: relative;
+}
+
+.shop-local-left {
+  width: 30%;
+  height: 0;
+  min-height: 440px;
+  background-image: url('images/Cottonwood-in-front-of-Zion-Lodge\ \(1\).jpg');
+  background-position: 50%;
+  background-repeat: repeat-x;
+  background-size: cover;
+  background-attachment: scroll;
+  border-radius: 5px;
+  position: absolute;
+  top: 6%;
+  bottom: 0%;
+  left: 0%;
+  right: auto;
+}
+
+.shop-local-right {
+  width: 80%;
+  background-color: var(--black);
+  color: var(--white-smoke);
+  border-radius: 5px;
+  justify-content: flex-end;
+  padding: 45px;
+  display: flex;
+}
+
+.shop-local-content-wrapper {
+  width: 80%;
+  padding-left: 300px;
+  padding-right: 145px;
+}
+
+.shop-local-heading {
+  margin-top: 0;
+  font-size: 45px;
+  line-height: 1.2;
+}
+
+.footer {
+  background-color: var(--restore-green);
+  padding-top: 65px;
+  padding-bottom: 10px;
+}
+
+.footer-wrapper {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.social-footer-link {
+  margin-left: 20px;
+  transition: all .3s;
+}
+
+.social-footer-link:hover {
+  opacity: .7;
+}
+
+.footer-bottom-wrapper {
+  color: var(--white-smoke);
+  text-align: center;
+  margin-top: 55px;
+}
+
+
+  /*bottone adotta*/
+  button {
+    margin: 20px;
   }
-  
-  .shop-item-wrapper {
-    width: 100%;
-    margin-bottom: 40px;
-  }
-  
-  .shop-image {
-    min-height: 500px;
-    background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg');
-    background-position: 50%;
-    background-size: cover;
+
+.nav-link.login-button {
+  background-color: transparent; /* o il colore che desideri */
+  border: 1px solid var(--restore-green);
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-weight: 700;
+  transition: border-color .3s, background-color .3s;
+}
+
+.nav-link.login-button:hover {
+  background-color: var(--black);
+  background-image: none;
+  color: #fff; /* o il colore del testo desiderato */
+  border-color: var(--black);
+}
+  .custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
     border-radius: 5px;
-    margin-bottom: 30px;
-  }
-  
-  .shop-image.tumbler-1 {
-    background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg');
-    background-position: 50%;
-    background-size: cover;
-    margin-bottom: 15px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
     position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
   }
-  
-  .shop-image.tumbler-1.narrow-list {
-    min-height: 400px;
+  .btn-4 {
+    background-color: #4dcc77;
+  background-image: linear-gradient(315deg, #4dcc77 0%, #96e4a9 74%);
+    line-height: 42px;
+    padding: 0;
+    border: none;
   }
-  
-  .shop-image.tumbler-1 {
-    background-image: url('https://d3e54v103j8qbb.cloudfront.net/img/background-image.svg');
-    background-position: 50%;
-    background-size: cover;
+  .btn-4:hover{
+    background-color: #89d8a7;
+  background-image: linear-gradient(315deg, #89d8a7 0%, #03c855 74%);
   }
-  
-  .shop-details-wrapper {
-    justify-content: space-between;
-    display: flex;
-  }
-  
-  .shop-details-left {
+  .btn-4 span {
+    position: relative;
+    display: block;
     width: 100%;
+    height: 100%;
   }
   
-  .shop-item-name {
-    color: var(--black);
-    text-align: center;
-    font-size: 20px;
-    font-weight: 400;
-  }
-  
-  .shop-item-price {
-    color: var(--black);
-    text-align: left;
-    margin-right: 10px;
-    font-size: 14px;
-    font-weight: 700;
-  }
-  
-  .shop-item-price.compare {
-    color: var(--restore-green);
-    text-decoration: line-through;
-  }
-  
-  .shop-local-section {
-    padding-top: 65px;
-    padding-bottom: 65px;
-  }
-  
-  .shop-local-wrapper {
-    min-height: 500px;
-    justify-content: flex-end;
-    display: flex;
-    position: relative;
-  }
-  
-  .shop-local-left {
-    width: 30%;
-    height: 0;
-    min-height: 440px;
-    background-image: url('images/Cottonwood-in-front-of-Zion-Lodge\ \(1\).jpg');
-    background-position: 50%;
-    background-repeat: repeat-x;
-    background-size: cover;
-    background-attachment: scroll;
-    border-radius: 5px;
+  .btn-4:before,
+  .btn-4:after {
     position: absolute;
-    top: 6%;
-    bottom: 0%;
-    left: 0%;
-    right: auto;
+    content: "";
+    right: 0;
+    top: 0;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
+      -4px -4px 6px 0 rgba(116, 125, 136, .2),
+      inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    transition: all 0.3s ease;
   }
   
-  .shop-local-right {
-    width: 80%;
-    background-color: var(--black);
-    color: var(--white-smoke);
-    border-radius: 5px;
-    justify-content: flex-end;
-    padding: 45px;
-    display: flex;
+  .btn-4:before {
+    height: 0%;
+    width: .1px;
   }
   
-  .shop-local-content-wrapper {
-    width: 80%;
-    padding-left: 300px;
-    padding-right: 145px;
+  .btn-4:after {
+    width: 0%;
+    height: .1px;
   }
   
-  .shop-local-heading {
-    margin-top: 0;
-    font-size: 45px;
-    line-height: 1.2;
+  .btn-4:hover:before {
+    height: 100%;
   }
   
-  .footer {
-    background-color: var(--restore-green);
-    padding-top: 65px;
-    padding-bottom: 10px;
+  .btn-4:hover:after {
+    width: 100%;
   }
   
-  .footer-wrapper {
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
+  .btn-4 span:before,
+  .btn-4 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
+      -4px -4px 6px 0 rgba(116, 125, 136, .2),
+      inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+    transition: all 0.3s ease;
   }
   
-  .social-footer-link {
-    margin-left: 20px;
-    transition: all .3s;
+  .btn-4 span:before {
+    width: .1px;
+    height: 0%;
   }
   
-  .social-footer-link:hover {
-    opacity: .7;
+  .btn-4 span:after {
+    width: 0%;
+    height: .1px;
   }
   
-  .footer-bottom-wrapper {
-    color: var(--white-smoke);
-    text-align: center;
-    margin-top: 55px;
+  .btn-4 span:hover:before {
+    height: 100%;
   }
   
-  
-    /*bottone adotta*/
-    button {
-      margin: 20px;
-    }
-
-  .nav-link.login-button {
-    background-color: transparent; /* o il colore che desideri */
-    border: 1px solid var(--restore-green);
-    border-radius: 5px;
-    padding: 5px 15px;
-    font-weight: 700;
-    transition: border-color .3s, background-color .3s;
+  .btn-4 span:hover:after {
+    width: 100%;
   }
-  
-  .nav-link.login-button:hover {
-    background-color: var(--black);
-    background-image: none;
-    color: #fff; /* o il colore del testo desiderato */
-    border-color: var(--black);
-  }
-    .custom-btn {
-      width: 130px;
-      height: 40px;
-      color: #fff;
-      border-radius: 5px;
-      padding: 10px 25px;
-      font-family: 'Lato', sans-serif;
-      font-weight: 500;
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      display: inline-block;
-       box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-       7px 7px 20px 0px rgba(0,0,0,.1),
-       4px 4px 5px 0px rgba(0,0,0,.1);
-      outline: none;
-    }
-    .btn-4 {
-      background-color: #4dccc6;
-    background-image: linear-gradient(315deg, #4dccc6 0%, #96e4df 74%);
-      line-height: 42px;
-      padding: 0;
-      border: none;
-    }
-    .btn-4:hover{
-      background-color: #89d8d3;
-    background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
-    }
-    .btn-4 span {
-      position: relative;
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-    
-    .btn-4:before,
-    .btn-4:after {
-      position: absolute;
-      content: "";
-      right: 0;
-      top: 0;
-      box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-        -4px -4px 6px 0 rgba(116, 125, 136, .2),
-        inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-      transition: all 0.3s ease;
-    }
-    
-    .btn-4:before {
-      height: 0%;
-      width: .1px;
-    }
-    
-    .btn-4:after {
-      width: 0%;
-      height: .1px;
-    }
-    
-    .btn-4:hover:before {
-      height: 100%;
-    }
-    
-    .btn-4:hover:after {
-      width: 100%;
-    }
-    
-    .btn-4 span:before,
-    .btn-4 span:after {
-      position: absolute;
-      content: "";
-      left: 0;
-      bottom: 0;
-      box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-        -4px -4px 6px 0 rgba(116, 125, 136, .2),
-        inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-      transition: all 0.3s ease;
-    }
-    
-    .btn-4 span:before {
-      width: .1px;
-      height: 0%;
-    }
-    
-    .btn-4 span:after {
-      width: 0%;
-      height: .1px;
-    }
-    
-    .btn-4 span:hover:before {
-      height: 100%;
-    }
-    
-    .btn-4 span:hover:after {
-      width: 100%;
-    }
 
 /* Center the modal in the middle of the screen */
 .w3-modal {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1000; /* Imposta un valore alto per assicurarti che il modal sia al di sopra della navbar */
-  opacity: 0;
-  transition: opacity 0.5s ease;
+display: flex;
+align-items: center;
+justify-content: center;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1000; /* Imposta un valore alto per assicurarti che il modal sia al di sopra della navbar */
+opacity: 0;
+transition: opacity 0.5s ease;
 }
 
 .w3-modal.show {
-  opacity: 1;
+opacity: 1;
 }
 
 .w3-modal-content {
-  max-width: 600px; /* Adjust the maximum width as needed */
-  width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  background-color: #fff;
-  position: relative; /* Ensure relative positioning for child elements */
-  z-index: 1001; /* Assicurati che il modal-content abbia un valore z-index più alto del modal */
-  text-align: center;
+max-width: 600px; /* Adjust the maximum width as needed */
+width: 100%;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+background-color: #fff;
+position: relative; /* Ensure relative positioning for child elements */
+z-index: 1001; /* Assicurati che il modal-content abbia un valore z-index più alto del modal */
+text-align: center;
 }
 .w3-modal-content h2 {
-  margin-bottom: 20px;
+margin-bottom: 20px;
 }
 
 .w3-modal-content form {
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
+padding-left: 40px;
+padding-right: 40px;
 }
 
 .w3-modal-content label {
-  margin-bottom: 10px;
+margin-bottom: 10px;
 }
 
 .w3-modal-content input {
-  padding: 10px;
-  margin-bottom: 15px;
+padding: 10px;
+margin-bottom: 15px;
 }
 
 .w3-modal-content button {
-  padding: 10px 20px;
+padding: 10px 20px;
 }
 
 .w3-modal-content p {
-  margin-top: 20px;
+margin-top: 20px;
 }
 
 /* Close button styles */
 .w3-display-topright {
-  position: absolute; /* Position relative to the modal content */
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  color: #333; /* Adjust the color as needed */
+position: absolute; /* Position relative to the modal content */
+top: 10px;
+right: 10px;
+cursor: pointer;
+font-size: 20px;
+color: #1d1d1d; /* Adjust the color as needed */
 }
 
 /* Optional: Hover effect */
 .w3-display-topright:hover {
-  color: #ff0000; /* Change color on hover if desired */
+background-color: #d33f3f;
+background-image: linear-gradient(315deg, #d33f3f 0%, #c80303 74%);
+color: #ffffff; /* Change color on hover if desired */
 }
 body.modal-open {
-  overflow: hidden;
+overflow: hidden;
 }
-    
-  /* Aggiungi questa regola specifica per ridurre la sfocatura dell'immagine */
+  
+/* Aggiungi questa regola specifica per ridurre la sfocatura dell'immagine */
 .nav-link.login-button.logged-in::before {
-  filter: brightness(1) contrast(1) saturate(1) blur(0px); /* Puoi regolare questi valori */
-  background-size: contain;
-  
+filter: brightness(1) contrast(1) saturate(1) blur(0px); /* Puoi regolare questi valori */
+background-size: contain;
+
 }
-  
