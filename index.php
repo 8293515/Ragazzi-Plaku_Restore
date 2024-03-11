@@ -9,7 +9,7 @@
           <h1 class="hero-heading">Attivi dal 2023</h1>
           <p class="hero-paragraph">Restore punta alla salvaguardia e il recupero di ambienti naturali in decadenza.</p>
           <div class="hero-button-wrapper">
-            <a href="/shop" class="btn light outline w-button">Conoscici</a>
+            <a href="https://www.instagram.com/mattia_plaku/" target="_blank" class="btn light outline w-button">Conoscici</a>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
     </div>
     <div class="row">
       <div class="col-md-12 text-center mt-3">
-        <button class="custom-btn btn-4"><span>Adotta Ora</span></button>
+        <button class="custom-btn btn-4"onclick="window.location.href = 'SceltaParco.php'"><span>Adotta Ora</span></button>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
                                     in grado di rispettare a pieno il loro habitat.
           </p>
           <div class="safe-button-wrapper">
-            <a href="/" class="btn light hero safe w-button">Scopri di più</a>
+            <a href="infoRestore.php" class="btn light hero safe w-button">Scopri di più</a>
           </div>
         </div>
       </div>

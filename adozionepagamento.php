@@ -7,7 +7,7 @@ $conn = mysqli_connect("localhost", "root", "", "dbrestore");
 
 // Verifica se l'utente è autenticato
 if (!isset($_SESSION['username'])) {
-    echo('<script>alert("Devi essere loggato per poter adottare!")</script>') // Reindirizza l'utente alla pagina di login se non è autenticato
+    echo('<script>alert("Devi essere loggato per poter adottare!")</script>'); // Reindirizza l'utente alla pagina di login se non è autenticato
     exit();
 }
 

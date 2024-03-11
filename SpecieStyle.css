@@ -261,7 +261,7 @@ button {
 .modal {
     display: none;
     position: fixed;
-    top: 68%;   /*Regola la posizione del modal*/
+    top: 48%;   /*Regola la posizione del modal*/
     left: 50%;  /*Regola la posizione del modal*/
     transform: translate(-50%, -50%);
     z-index: 1000;

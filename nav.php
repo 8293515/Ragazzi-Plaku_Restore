@@ -32,13 +32,12 @@
       <div data-collapse="medium" data-animation="over-right" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
         <div class="container">
           <div class="nav-wrapper">
-            <a href="/" aria-current="page" class="brand w-nav-brand w--current"><img src="images/[removal.ai]_d1ffefac-a7c4-4aea-b9cd-0cb9642791d6-restore.png" alt="" width="131"></a>
+            <a  aria-current="page" class="brand w-nav-brand w--current"><img src="images/[removal.ai]_d1ffefac-a7c4-4aea-b9cd-0cb9642791d6-restore.png" alt="" width="131"></a>
             <div class="cart-nav-wrapper">
               <nav role="navigation" class="nav-menu w-nav-menu">
                 <a href="index.php" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
                 <a href="infoRestore.php" class="nav-link w-nav-link">Info</a>
                 <a href="SceltaParco.php" class="nav-link w-nav-link">Adotta</a>
-                <a href="/donations" class="nav-link w-nav-link">Iscrizioni</a>
                 <button onclick="openModal()" class="nav-link w-nav-link login-button" id="loginbutton">Login</button>
               </nav>
 
