@@ -6,47 +6,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina di Pagamento</title>
-    <!-- Aggiungi eventuali stili aggiuntivi o script necessari qui -->
     <?php
     session_start();
-    // Verifica se l'ID della biodiversità è stato inviato con il modulo POST
     if (isset($_SESSION['IdBio'])) {
         $id_bio = $_SESSION['IdBio'];
-
-        // Ora puoi utilizzare $id_bio come necessario nel tuo script di pagamento
-        // ...
     } else {
-        // Gestione dell'errore nel caso in cui id_bio non sia presente
         echo "Errore: ID della biodiversità non presente.";
     }
-
     ?>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('cvv').addEventListener('input', formatCVV);
-            document.getElementById('ccn').addEventListener('input', formatCreditCardNumber);
-            document.getElementById('scadenza').addEventListener('input', formatExpirationDate);
-        });
-        function formatCreditCardNumber() {
-            var ccnInput = document.getElementById('ccn');
-            ccnInput.value = ccnInput.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
-        }
-
-        // Funzione per formattare la data di scadenza
-        function formatExpirationDate() {
-            var expirationDateInput = document.getElementById('scadenza');
-            if (expirationDateInput.value.length < 4) {
-                expirationDateInput.value = expirationDateInput.value.replace(/[^\d]/g, '').replace(/(.{2})/g, '$1/').trim();
-            }
-
-        }
-
-        function formatCVV() {
-            var cvvInput = document.getElementById('cvv');
-            cvvInput.value = cvvInput.value.replace(/\D/g, '').trim(); // Accetta solo caratteri numerici
-        }
-
-    </script>
+    <script src="scripts/pagamentojs.js"></script>
 </head>
 
 <body>
@@ -127,7 +95,7 @@
                                     echo '<p> Nome Specie:' . $nomeSpecie . '</p>';
                                     echo '<p> Nome Comune:' . $nomecomune . '</p>';
                                     echo '<p> Sesso:' . $sesso . '</p>';
-                                    echo '<p> Età:' . $eta . '</p>';
+                                    echo '<p> Età:' . $eta . ' anni</p>';
                                     echo '<p>Costo:' . $importo . '</p';
                                     echo '</div>';
                                     ?>
@@ -144,6 +112,7 @@
         </form>
     </div>
     </div>
+    <br><br>
     <?php include 'footer.html'; ?>
 
 </body>

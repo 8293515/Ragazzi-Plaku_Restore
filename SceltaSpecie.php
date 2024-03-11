@@ -12,16 +12,14 @@
               </script>';
     }
     ?>
-    <script src="sceltaspeciejs.js"></script>
+    <script src="scripts/sceltaspeciejs.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina di selezione Animali e Piante</title>
     <link rel="stylesheet" href="SpecieStyle.css">
     <?php include 'nav.php'; ?>
-    <script>
-        createPage();
-    </script>
+    <script>createPage();</script>
 
 </head>
 
@@ -62,6 +60,6 @@
         </div>
     </div>
 </div>
-  
+
   </body>
 </html>

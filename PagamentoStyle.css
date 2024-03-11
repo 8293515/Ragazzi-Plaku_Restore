@@ -45,24 +45,6 @@ body {
     line-height: 36px;
   }
   
-  a {
-    color: var(--restore-green);
-    text-decoration: underline;
-  }
-  
-  a:hover {
-    text-decoration: none;
-  }
-  
-  ul {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding-left: 40px;
-  }
-  
-  li {
-    margin-bottom: 25px;
-  }
   
   label {
     margin-bottom: 5px;

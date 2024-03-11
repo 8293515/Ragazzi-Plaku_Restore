@@ -36,6 +36,6 @@
   </div>
   
 </body>
-<script src="registrajs.js"></script>
+<script src="scripts/registrajs.js"></script>
 
 </html>
