@@ -6,17 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina di Pagamento</title>
-    <!-- Aggiungi eventuali stili aggiuntivi o script necessari qui -->
     <?php
     session_start();
-    // Verifica se l'ID della biodiversità è stato inviato con il modulo POST
     if (isset($_SESSION['IdBio'])) {
         $id_bio = $_SESSION['IdBio'];
 
-        // Ora puoi utilizzare $id_bio come necessario nel tuo script di pagamento
-        // ...
     } else {
-        // Gestione dell'errore nel caso in cui id_bio non sia presente
         echo "Errore: ID della biodiversità non presente.";
     }
 
@@ -80,7 +75,6 @@
                         <div class="selection-section-top"></div>
 
                         <div class="selection-section">
-                            <!-- Selection grid layout for animals and plants -->
                             <h3>Specie adottata</h3>
                             <label>Scegli il nome del tuo adottato:</label>
                             <input type="text" name="NomeProprio"><br><br><br>
@@ -88,7 +82,7 @@
                                 <!-- Opzione Scelta -->
                                 <div class="selection-option">
                                     <?php
-                                    // Recupera i dati della specie adottata dalla sessione
+                                    //Prendo i dati dalla session
                                     $id_bio = $_SESSION['IdBio'];
                                     $nomecomune = $_SESSION['NomeComune'];
                                     $sesso = $_SESSION['Sesso'];

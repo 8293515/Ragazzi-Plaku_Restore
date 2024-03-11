@@ -20,7 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ottieni il risultato della query
     $result = $stmt->get_result();
 
-    // Chiudi la connessione al database
     $stmt->close();
     $conn->close();
 
@@ -28,9 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Restituisci i dati come JSON
     while ($row = $result->fetch_assoc()) {
+        // Ottieni le informazioni sull'immagine
         $imageInfo = getimagesizefromstring($row['ImgInd']);
         $imageType = $imageInfo['mime'];
+        
+        // Codifica l'immagine in base64
         $base64img = base64_encode($row['ImgInd']);
+
+        // Aggiungi i dati dell'individuo all'array dei dati
         $datiindividui[] = [
             'IdBio' => $row['Id_Bio'],
             'NomeComune' => $row['Nome_Comune'],

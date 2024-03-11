@@ -15,7 +15,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $response = array("success" => true, "message" => "L'email è disponibile.");
     }
-
     header('Content-Type: application/json');
     echo json_encode($response);
     exit;

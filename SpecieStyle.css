@@ -25,7 +25,6 @@ h2 {
     line-height: 36px;
 }
 
-/* Adopt button styling */
 button {
     margin: 20px;
 }
@@ -131,7 +130,7 @@ button {
     width: 100%;
 }
 
-/* Animal and plant grid layout styling */
+/* Stile per le grid Animali e Piante */
 .selection-section {
     margin-top: 40px;
 }
@@ -297,13 +296,6 @@ button {
     border-radius: 8px;
     /* Puoi regolare la dimensione del bordo se lo desideri */
 }
-
-
-
-
-
-
-
 
 /* Aggiorna lo stile per l'immagine all'interno del modal */
 

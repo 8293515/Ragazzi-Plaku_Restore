@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="AreaAmministratoreStyle.css">
-
 <head>
     <script src="scripts/areaAmministratorejs.js"></script>
+    <link rel="stylesheet" href="AreaAmministratoreStyle.css">
 </head>
 
 <body>
@@ -12,7 +9,6 @@
 
     <div class="container-personale">
         <?php
-        // Connessione al database (sostituisci con le tue credenziali)
         $conn = mysqli_connect("localhost", "root", "", "dbrestore");
 
         // Verifica della connessione
@@ -30,6 +26,7 @@
             echo "<tr><th>Nome Scientifico</th><th>Parco</th><th>Immagine</th><th>Tipo</th><th>Azioni</th></tr>";
 
             while ($rowSpecie = $resultSpecie->fetch_assoc()) {
+                // Creazione di un oggetto specie con i dati del database
                 echo "<tr>";
                 echo "<td>" . $rowSpecie['NomeScientifico'] . "</td>";
                 echo "<td>" . $rowSpecie['Parco'] . "</td>";
@@ -54,6 +51,7 @@
             echo "<tr><th>ID</th><th>Nome Comune</th><th>Specie</th><th>Sesso</th><th>Età</th><th>Costo Adozione</th><th>ImgInd</th><th>Disponibile</th><th>Azioni</th></tr>";
 
             while ($rowBiodiversita = $resultBiodiversita->fetch_assoc()) {
+                // Creazione di un oggetto biodiversità con i dati del database
                 echo "<tr>";
                 echo "<td>" . $rowBiodiversita['Id_Bio'] . "</td>";
                 echo "<td>" . $rowBiodiversita['Nome_Comune'] . "</td>";
@@ -72,7 +70,6 @@
             echo "<p>Nessuna biodiversità trovata.</p>";
         }
 
-        // Chiudi la connessione al database
         $conn->close();
         ?>
 

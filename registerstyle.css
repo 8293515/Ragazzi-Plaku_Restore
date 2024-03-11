@@ -272,7 +272,7 @@ img {
 
 .w-form {
   margin: auto;
-  /* This will center the form */
+  /* centra il form */
 }
 
 .w-layout-blockcontainer {
@@ -281,5 +281,5 @@ img {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  /* Use 100% of the viewport height */
+  /* vh sta per viewport height */
 }

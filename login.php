@@ -1,8 +1,6 @@
 <?php
-// Inizializza o ripristina la sessione
 session_start();
 
-// Configura la connessione al database come descritto in precedenza
 $conn = mysqli_connect("localhost", "root", "", "dbrestore");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

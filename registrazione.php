@@ -20,9 +20,9 @@
         <input type="file" id="myfile" name="myfile" accept="image/png, image/jpeg" required id="image-input"
           onchange="resizeAndPreviewImage()">
         <label for="name" class="field-label-7">Nome</label>
-        <input class="w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name" />
+        <input class="w-input" maxlength="256" name="name" data-name="Name" placeholder="" type="text" id="name" onkeypress="return controlloCarattere(event)" />
         <label for="email-2" class="field-label-6">Cognome</label><input class="w-input" maxlength="256" name="cognome"
-          data-name="Email 2" placeholder="" type="text" id="cognome" required="" />
+          data-name="Email 2" placeholder="" type="text" id="cognome" required="" onkeypress="return controlloCarattere(event)"/>
         <label for="email-2" class="field-label-4">Email</label>
         <div id="email-check-result"></div>
         <input class="w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="" type="email"

@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     xhr.send();
 });
+
 function openModal() {
+    // Mostra il modal
     var modal = document.getElementById('id01');
     modal.style.display = 'flex';
 
@@ -32,6 +34,7 @@ function openModal() {
 }
 
 function closeModal() {
+    // Chiudi il modal
     var modal = document.getElementById('id01');
     modal.classList.remove('show');
     setTimeout(function () {
@@ -40,7 +43,9 @@ function closeModal() {
 
     document.body.classList.remove('modal-open');
 }
+
 function handleLogin() {
+    // Gestisci il login
     var email = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
@@ -69,6 +74,7 @@ function handleLogin() {
 }
 
 function updateLoginButton(imgBase64, imgInfo, isAdmin) {
+    // Aggiorna il bottone di login
     var areaPersonaleButton = document.getElementById('AP');
     var loginButton = document.querySelector('.login-button');
 
@@ -82,23 +88,26 @@ function updateLoginButton(imgBase64, imgInfo, isAdmin) {
         loginButton.style.borderRadius = "50%";
         loginButton.style.width = "50px"; // Imposta la larghezza del cerchio
         loginButton.style.height = "50px"; // Imposta l'altezza del cerchio
+
+        // Gestisci il reindirizzamento dell'area personale in base allo stato di admin
         if (isAdmin == 1) {
             areaPersonaleButton.onclick = function () {
                 window.location.href = 'AreaAmministratore.php';
             };
-        }
-        else {
+        } else {
             areaPersonaleButton.onclick = function () {
                 window.location.href = 'AreaPersonale.php';
             }
         }
-
     }
 }
+
 function openProfileModal() {
+    // Mostra il modal del profilo
     var profileModal = document.getElementById('profileModal');
     profileModal.style.display = 'flex';
 
+    //Calcolo la posizione del modal perché sia al centro
     var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var modalHeight = profileModal.offsetHeight;
     var topPosition = (windowHeight - modalHeight) / 2;
@@ -109,6 +118,7 @@ function openProfileModal() {
 }
 
 function closeProfileModal() {
+    // Chiudi il modal del profilo
     var profileModal = document.getElementById('profileModal');
     profileModal.classList.remove('show');
     setTimeout(function () {

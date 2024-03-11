@@ -1,13 +1,10 @@
 function modificaCampo(campo) {
-    // Verifica se la modifica è già in corso
     var modificaInCorso = document.getElementById("input_" + campo) !== null;
 
-    // Disabilita il link di modifica se la modifica è in corso
     if (modificaInCorso) {
         return;
     }
 
-    // Recupera il valore corrente del campo
     var valoreCorrente = document.getElementById(campo).innerText;
 
     // Crea un campo di input per la modifica
@@ -15,7 +12,7 @@ function modificaCampo(campo) {
     inputModifica.type = "text";
     inputModifica.value = valoreCorrente;
     inputModifica.id = "input_" + campo;
-    inputModifica.className = "campo-input"; // Aggiungi una classe per lo stile
+    inputModifica.className = "campo-input";
 
     // Sostituisci il testo con il campo di input
     document.getElementById(campo).innerHTML = "";
@@ -24,16 +21,15 @@ function modificaCampo(campo) {
     // Aggiungi un pulsante di conferma
     var pulsanteConferma = document.createElement("button");
     pulsanteConferma.innerHTML = "✔ Conferma";
-    pulsanteConferma.className = "conferma-btn"; // Aggiungi una classe per lo stile
+    pulsanteConferma.className = "conferma-btn";
     pulsanteConferma.onclick = function () { confermaModifica(campo); };
     document.getElementById(campo).appendChild(pulsanteConferma);
 }
 
 function confermaModifica(campo) {
-    // Recupera il nuovo valore
+    //Recupera il valore del campo di input
     var nuovoValore = document.getElementById("input_" + campo).value;
 
-    // Invia il nuovo valore al server utilizzando AJAX
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "modificacliente.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -48,6 +44,5 @@ function confermaModifica(campo) {
         }
     };
 
-    // Invia i dati al server
     xhr.send("campo=" + campo + "&valore=" + encodeURIComponent(nuovoValore));
 }

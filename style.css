@@ -613,7 +613,6 @@ button {
   width: 100%;
 }
 
-/* Center the modal in the middle of the screen */
 .w3-modal {
   display: flex;
   align-items: center;
@@ -635,14 +634,12 @@ button {
 
 .w3-modal-content {
   max-width: 600px;
-  /* Adjust the maximum width as needed */
   width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   position: relative;
-  /* Ensure relative positioning for child elements */
   z-index: 1001;
-  /* Assicurati che il modal-content abbia un valore z-index più alto del modal */
+  /* Assicurati che il modal-content abbia un valore z-index più alto del modal(Per avere l'effetto sovraimpressione */
   text-align: center;
 }
 
@@ -674,24 +671,19 @@ button {
   margin-top: 20px;
 }
 
-/* Close button styles */
 .w3-display-topright {
   position: absolute;
-  /* Position relative to the modal content */
   top: 10px;
   right: 10px;
   cursor: pointer;
   font-size: 20px;
   color: #1d1d1d;
-  /* Adjust the color as needed */
 }
 
-/* Optional: Hover effect */
 .w3-display-topright:hover {
   background-color: #d33f3f;
   background-image: linear-gradient(315deg, #d33f3f 0%, #c80303 74%);
   color: #ffffff;
-  /* Change color on hover if desired */
 }
 
 body.modal-open {

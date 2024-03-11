@@ -15,10 +15,8 @@
             <h2 class="page-title">Pagina di selezione Parco</h2>
         </div>
     </div>
-    <!-- Animal selection section with grid layout -->
     <div class="animal-section">
         <h2>Seleziona il Parco per procedere all'adozione</h2>
-        <!-- Grid layout for animal options -->
         <div class="animal-grid">
             <div class="animal-option">
                 <img src="images/Parco-Artico.jpg" alt="ParcoArtico">

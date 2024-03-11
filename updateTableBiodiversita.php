@@ -1,13 +1,11 @@
 <?php
-// Connessione al database (sostituisci con le tue credenziali)
+// Rigenera la tabella Biodiversità
 $conn = mysqli_connect("localhost", "root", "", "dbrestore");
 
-// Verifica della connessione
 if ($conn->connect_error) {
     die("Connessione al database fallita: " . $conn->connect_error);
 }
 
-// Recupera e mostra la tabella della Biodiversità
 $queryBiodiversita = "SELECT * FROM Biodiversita";
 $resultBiodiversita = $conn->query($queryBiodiversita);
 
@@ -34,6 +32,5 @@ if ($resultBiodiversita->num_rows > 0) {
     echo "<p>Nessuna biodiversità trovata.</p>";
 }
 
-// Chiudi la connessione al database
 $conn->close();
 ?>

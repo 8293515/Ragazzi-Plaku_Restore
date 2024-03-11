@@ -27,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: SceltaSpecie.php");
 
 } else {
-    // Gestisci il caso in cui la richiesta non sia di tipo POST
     echo "Errore: Metodo di richiesta non valido.";
     $conn->close();
 }

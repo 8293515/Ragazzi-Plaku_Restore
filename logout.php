@@ -1,11 +1,10 @@
 <?php
-// Avvia la sessione
 session_start();
 
-// Distruggi tutte le variabili di sessione
+// Distruggo tutte le variabili di sessione
 session_unset();
 
-// Distruggi la sessione
+// Distruggo la sessione
 session_destroy();
 
 header("Location: index.php")

@@ -8,9 +8,8 @@
     <title>Pagina Area Personale</title>
     <link rel="stylesheet" href="AreaPersonaleStyle.css">
 </head>
-<script src="scripts/areapersonajs.js">
 
-</script>
+<script src="scripts/areapersonajs.js"></script>
 
 <body>
 
@@ -25,7 +24,6 @@
     <div class="container-personale">
         <?php
 
-        // Connessione al database (sostituisci con le tue credenziali)
         $conn = mysqli_connect("localhost", "root", "", "dbrestore");
 
         // Verifica della connessione
@@ -33,9 +31,9 @@
             die("Connessione al database fallita: " . $conn->connect_error);
         }
 
-        // Ottenere le informazioni del cliente
+        // Ottengo le informazioni del cliente
         $emailCliente = $_SESSION['username'];
-        $queryCliente = "SELECT Nome, Cognome, Email FROM clienti WHERE Email=?";
+        $queryCliente = "SELECT Nome, Cognome, Email  FROM clienti WHERE Email=?";
         $stmtCliente = $conn->prepare($queryCliente);
         $stmtCliente->bind_param("s", $emailCliente);
         $stmtCliente->execute();
@@ -45,12 +43,12 @@
             $rowCliente = $resultCliente->fetch_assoc();
             echo "<h2>Area Personale di " . $rowCliente['Nome'] . " " . $rowCliente['Cognome'] . "</h2>";
 
-            // Mostrare le informazioni del cliente
+            // Mostro le informazioni del cliente
             echo "<div class='account-info'>";
             echo "<h3>Informazioni dell'Account</h3>";
             echo "<p>Nome: <span id='Nome'>" . $rowCliente['Nome'] . "</span> <a href='#' onclick='modificaCampo(\"Nome\")'>Modifica</a></p>";
             echo "<p>Cognome: <span id='Cognome'>" . $rowCliente['Cognome'] . "</span> <a href='#' onclick='modificaCampo(\"Cognome\")'>Modifica</a></p>";
-            echo "<p>Email: <span id='Email'>" . $rowCliente['Email'] . "";
+            echo "<p>Email: <span id='Email'>" . $rowCliente['Email'] . "</span></p>";
             echo "</div>";
 
             // Ottenere le specie adottate dal cliente
@@ -65,7 +63,7 @@
             $resultAdozioni = $stmtAdozioni->get_result();
 
             if ($resultAdozioni->num_rows > 0) {
-                // Mostrare le specie adottate
+                // Mostro le specie adottate
                 echo "<div class='species-adopted'>";
                 echo "<h3>Individui Adottati</h3>";
                 echo "<ul class='species-list'>";
@@ -91,16 +89,13 @@
             echo "Cliente non trovato.";
         }
 
-        // Chiudi la connessione al database
         $conn->close();
         ?>
 
     </div>
     <br><br><br>
 
-    </div>
-    </div>
-    <?php include 'footer.html' ?>
+    <?php include 'footer.html'; ?>
 
 </body>
 

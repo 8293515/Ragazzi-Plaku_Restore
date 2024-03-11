@@ -1,6 +1,5 @@
 <?php
 session_start();
-// Creazione della connessione
 $conn = mysqli_connect("localhost", "root", "", "dbrestore");
 
 // Verifica della connessione
@@ -16,11 +15,11 @@ $cap = $_POST['cap'];
 $titolare = $_POST['titolare'];
 $scadenza = $_POST['scadenza'];
 $ccv = $_POST['ccv'];
-$emailCliente = $_SESSION['username']; // Devi ottenere l'email del cliente dalla sessione o dal modulo di pagamento
+$emailCliente = $_SESSION['username']; 
 $id_bio = $_SESSION['IdBio'];
-$nomeProprio = $_POST['NomeProprio']; // Devi ottenere il nome proprio dall'input appropriato nel modulo di pagamento // Devi ottenere l'importo dalla sessione o dal modulo di pagamento
+$nomeProprio = $_POST['NomeProprio']; 
 $importo = $_SESSION['Importo'];
-; // Devi ottenere il costo dell'adozione dalla sessione o dal modulo di pagamento
+
 
 // Inserimento dei dati nella tabella Adozione
 $sql = "INSERT INTO adozioni (EmailCliente, Id_Bio, NomeProprio, Importo, Data_Adozione) VALUES (?, ?, ?, ?, NOW())";
@@ -46,7 +45,7 @@ if ($stmt->execute() === TRUE) {
     echo "Errore durante l'inserimento dei dati: " . $conn->error;
 }
 
-// Chiusura dello statement e della connessione
+
 $stmt->close();
 $stmtUpdate->close();
 $conn->close();

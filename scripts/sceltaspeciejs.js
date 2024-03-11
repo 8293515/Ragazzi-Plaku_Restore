@@ -56,12 +56,10 @@ function createPage() {
     });
 }
 
-// Funzione per creare una nuova griglia di selezione
 function createSelectionGrid(containerId) {
-    console.log("Attempting to create grid for container with id:", containerId);
+    // Crea e restituisce una nuova griglia di selezione all'interno del container specificato
     var container = document.getElementById(containerId);
 
-    // Verifica se l'elemento con l'id specificato esiste
     if (!container) {
         console.error("Container element not found:", containerId);
         return null;
@@ -69,23 +67,25 @@ function createSelectionGrid(containerId) {
 
     var selectionGrid = document.createElement('div');
     selectionGrid.className = 'selection-grid';
-    selectionGrid.id = containerId + '-grid'; // Aggiunta dell'id
+    selectionGrid.id = containerId + '-grid';
     container.appendChild(selectionGrid);
-
-    console.log("Created grid with id:", selectionGrid.id);
 
     return selectionGrid;
 }
+
 function createSelectionOption(data) {
+    // Crea e restituisce un elemento di opzione di selezione con i dati forniti
     var selectionOption = document.createElement('div');
     selectionOption.className = 'selection-option';
 
+    // Aggiungi un'immagine
     var img = document.createElement('img');
     img.src = 'data:image/jpeg;base64,' + data.Img;
     img.alt = data.NomeScientifico;
-    img.style.width = '100%'; // Imposta la larghezza dell'immagine al 100%
+    img.style.width = '100%';
     selectionOption.appendChild(img);
 
+    // Aggiungi il contenuto testuale
     var selectionContent = document.createElement('div');
     selectionContent.className = 'selection-content';
 
@@ -97,6 +97,7 @@ function createSelectionOption(data) {
     p.textContent = data.Tipo;
     selectionContent.appendChild(p);
 
+    // Aggiungi un pulsante con la funzione di apertura del modal
     var button = document.createElement('button');
     button.className = 'custom-btn btn-4';
     button.innerHTML = '<span onclick="openModalSpecie(\'' + data.NomeScientifico + '\')">Scegli</span>';
@@ -107,12 +108,11 @@ function createSelectionOption(data) {
     return selectionOption;
 }
 
-// Funzione per aprire il modal e caricare i dati
 function openModalSpecie(nomeScientifico) {
+    // Apre il modal e carica i dati correlati dalla tabella biodiversita
     var modal = document.getElementById('adoptModal');
     modal.style.display = 'block';
 
-    // Esegui una chiamata AJAX per ottenere i dati dalla tabella biodiversita
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "caricadatibiodiversita.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -122,9 +122,9 @@ function openModalSpecie(nomeScientifico) {
             var biodiversitaData = JSON.parse(xhr.responseText);
 
             var adoptModalContent = document.getElementById('adoptModalContent');
-            // Popola il contenuto del modal con i dati       
+            //Controlla che biodiversitaData non sia vuoto ,se lo è allora non ci sono individui di quella X specie da adottare
             if (biodiversitaData && biodiversitaData.length > 0) {
-                var modalContent = ''; // Inizializza una stringa vuota per contenere il contenuto del modal
+                var modalContent = '';
 
                 biodiversitaData.forEach(function (item) {
                     var modalItem = createModalItem(item);
@@ -133,29 +133,26 @@ function openModalSpecie(nomeScientifico) {
 
                 adoptModalContent.innerHTML = modalContent;
             } else {
-                // Se biodiversitaData è vuoto, mostra un messaggio nel modal
-                adoptModalContent.innerHTML = '<p>Non ci sono animali di questa specie da adottare.</p>';
+                adoptModalContent.innerHTML = '<p>Non ci sono individui di questa specie da adottare.</p>';
             }
         }
     };
 
-    // Invia la richiesta con il nome scientifico come parametro
     xhr.send("NomeScientifico=" + encodeURIComponent(nomeScientifico));
 }
 
-
-// Funzione per chiudere il modal
 function closeModalSpecie() {
+    // Chiude il modal
     var modal = document.getElementById('adoptModal');
     modal.style.display = 'none';
 }
 
-// Funzione per creare un elemento modal-item
-// Funzione per creare un elemento modal-item
 function createModalItem(data) {
+    // Crea e restituisce un elemento modal-item con i dati forniti
     var modalItem = document.createElement('div');
     modalItem.className = 'modal-item';
 
+    // Aggiungi un'immagine
     var imgContainer = document.createElement('div');
     imgContainer.className = 'modal-item-img-container';
 
@@ -166,6 +163,7 @@ function createModalItem(data) {
 
     modalItem.appendChild(imgContainer);
 
+    // Aggiungi il contenuto testuale
     var content = document.createElement('div');
     content.className = 'modal-item-content';
 
@@ -173,7 +171,6 @@ function createModalItem(data) {
     label.textContent = data.NomeComune;
     content.appendChild(label);
 
-    // Verifica il tipo prima di aggiungere il sesso
     if (data.Tipo == 'Animale') {
         var p1 = document.createElement('p');
         p1.textContent = 'Sesso: ' + data.Sesso;
@@ -187,12 +184,12 @@ function createModalItem(data) {
     var p3 = document.createElement('p');
     p3.textContent = 'Costo Adozione: ' + data.Importo + '';
     content.appendChild(p3);
-    // Creazione del form
+
+    // Creazione del form e input nascosti
     var form = document.createElement('form');
     form.action = 'logincheck.php';
     form.method = 'post';
 
-    // Creazione dell'input nascosto e aggiunta al form
     for (var key in data) {
         if (data.hasOwnProperty(key)) {
             var hiddenInput = document.createElement('input');
@@ -203,6 +200,7 @@ function createModalItem(data) {
         }
     }
 
+    // Aggiungi un pulsante di submit
     var submitBtn = document.createElement('input');
     submitBtn.type = 'submit';
     submitBtn.value = 'Adotta';

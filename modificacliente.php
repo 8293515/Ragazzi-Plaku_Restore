@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Connessione al database
 $conn = mysqli_connect("localhost", "root", "", "dbrestore");
 
 if ($conn->connect_error) {
@@ -25,7 +24,6 @@ if ($stmtAggiornamento->execute()) {
     echo "error";
 }
 
-// Chiudi la connessione al database
 $stmtAggiornamento->close();
 $conn->close();
 ?>
