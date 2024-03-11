@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="AreaAmministratoreStyle.css">
+
 <head>
     <script src="scripts/areaAmministratorejs.js"></script>
 </head>
@@ -10,7 +11,7 @@
     <?php include 'nav.php'; ?>
 
     <div class="container-personale">
-    <?php
+        <?php
         // Connessione al database (sostituisci con le tue credenziali)
         $conn = mysqli_connect("localhost", "root", "", "dbrestore");
 
@@ -49,7 +50,6 @@
 
         if ($resultBiodiversita->num_rows > 0) {
             echo "<h2>Biodiversità</h2>";
-            echo "<button onclick='createNewItem()'>Crea Nuovo Elemento</button>";
             echo "<table id='table-biodiversita' border='1'>"; // Aggiornato l'ID della tabella
             echo "<tr><th>ID</th><th>Nome Comune</th><th>Specie</th><th>Sesso</th><th>Età</th><th>Costo Adozione</th><th>ImgInd</th><th>Disponibile</th><th>Azioni</th></tr>";
 

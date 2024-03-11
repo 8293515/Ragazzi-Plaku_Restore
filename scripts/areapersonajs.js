@@ -25,7 +25,7 @@ function modificaCampo(campo) {
     var pulsanteConferma = document.createElement("button");
     pulsanteConferma.innerHTML = "✔ Conferma";
     pulsanteConferma.className = "conferma-btn"; // Aggiungi una classe per lo stile
-    pulsanteConferma.onclick = function() { confermaModifica(campo); };
+    pulsanteConferma.onclick = function () { confermaModifica(campo); };
     document.getElementById(campo).appendChild(pulsanteConferma);
 }
 

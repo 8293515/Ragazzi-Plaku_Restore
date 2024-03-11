@@ -48,8 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Stampa i dati JSON
     echo json_encode($datiindividui);
-} 
-else {
+} else {
     // Se il metodo della richiesta non è POST, restituisci un messaggio di errore JSON
     header('Content-Type: application/json');
     echo json_encode(["Errore" => "Metodo di richiesta non valido"]);

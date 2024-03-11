@@ -11,12 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "SELECT * FROM clienti WHERE Email = ? AND Psw = ?";
     $stmt = $conn->prepare($sql);
-    $stmt -> bind_param('ss',$email,$password);
+    $stmt->bind_param('ss', $email, $password);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        
+
         $row = $result->fetch_assoc();
         $imageInfo = getimagesizefromstring($row['img']);
         $imageType = $imageInfo['mime'];
@@ -30,10 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['imageinfo'] = $imageInfo;
         $_SESSION['isAdmin'] = $amministratore;
 
-        $response = array("success" => true, "img" => $base64img , "imginfo" => $imageType);
-    } 
-    else 
-    {
+        $response = array("success" => true, "img" => $base64img, "imginfo" => $imageType);
+    } else {
         $response = array("success" => false, "message" => "Credenziali non valide");
     }
 

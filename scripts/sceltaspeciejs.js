@@ -1,29 +1,29 @@
-function createPage(){
+function createPage() {
     document.addEventListener("DOMContentLoaded", function () {
         // Esegui una chiamata AJAX per ottenere le informazioni sulla specie dal server
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "generadatispecie.php", true);
-    
+
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var specieData = JSON.parse(xhr.responseText);
-    
+
                 // Crea la griglia della fauna
                 var faunaGrid = createSelectionGrid('fauna-grid');
-    
+
                 // Crea la griglia della flora
                 var floraGrid = createSelectionGrid('flora-grid');
-    
+
                 // Imposta il numero desiderato di celle per riga
                 var maxCells = 3; // Massimo numero di celle per griglia
-    
+
                 // Itera attraverso i dati e crea gli elementi
                 var currentCellCount = 0;
                 var currentRowCount = 0;
-    
+
                 specieData.forEach(function (data, index) {
                     var selectionOption = createSelectionOption(data);
-    
+
                     if (data.Tipo === 'Pianta') {
                         // Aggiungi gli elementi alla griglia della flora se il tipo è "Pianta"
                         floraGrid.appendChild(selectionOption);
@@ -31,27 +31,27 @@ function createPage(){
                         // Aggiungi gli elementi alla griglia della fauna
                         faunaGrid.appendChild(selectionOption);
                     }
-    
+
                     currentCellCount++;
-    
+
                     if (currentCellCount === maxCells || index === specieData.length - 1) {
                         // Se abbiamo raggiunto il massimo di celle o siamo all'ultimo elemento, passa alla colonna sottostante
                         currentCellCount = 0;
                         currentRowCount++;
                     }
                 });
-    
+
                 // Imposta l'altezza delle griglie in base al numero di righe
                 faunaGrid.style.gridTemplateRows = 'repeat(' + currentRowCount + ', 1fr)';
                 floraGrid.style.gridTemplateRows = 'repeat(' + currentRowCount + ', 1fr)';
-                
+
                 // Imposta il numero desiderato di colonne
                 var gridColumns = 'repeat(' + Math.min(maxCells, specieData.length) + ', 1fr)';
                 faunaGrid.style.gridTemplateColumns = gridColumns;
                 floraGrid.style.gridTemplateColumns = gridColumns;
             }
         };
-    
+
         xhr.send();
     });
 }
@@ -119,25 +119,25 @@ function openModalSpecie(nomeScientifico) {
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
-        var biodiversitaData = JSON.parse(xhr.responseText);
+            var biodiversitaData = JSON.parse(xhr.responseText);
 
-        var adoptModalContent = document.getElementById('adoptModalContent');
-        // Popola il contenuto del modal con i dati       
-        if (biodiversitaData && biodiversitaData.length > 0) {
-            var modalContent = ''; // Inizializza una stringa vuota per contenere il contenuto del modal
+            var adoptModalContent = document.getElementById('adoptModalContent');
+            // Popola il contenuto del modal con i dati       
+            if (biodiversitaData && biodiversitaData.length > 0) {
+                var modalContent = ''; // Inizializza una stringa vuota per contenere il contenuto del modal
 
-            biodiversitaData.forEach(function (item) {
-                var modalItem = createModalItem(item);
-                modalContent += modalItem.outerHTML;
-            });
+                biodiversitaData.forEach(function (item) {
+                    var modalItem = createModalItem(item);
+                    modalContent += modalItem.outerHTML;
+                });
 
-            adoptModalContent.innerHTML = modalContent;
-        } else {
-            // Se biodiversitaData è vuoto, mostra un messaggio nel modal
-            adoptModalContent.innerHTML = '<p>Non ci sono animali di questa specie da adottare.</p>';
+                adoptModalContent.innerHTML = modalContent;
+            } else {
+                // Se biodiversitaData è vuoto, mostra un messaggio nel modal
+                adoptModalContent.innerHTML = '<p>Non ci sono animali di questa specie da adottare.</p>';
+            }
         }
-    }
-};
+    };
 
     // Invia la richiesta con il nome scientifico come parametro
     xhr.send("NomeScientifico=" + encodeURIComponent(nomeScientifico));
@@ -181,11 +181,11 @@ function createModalItem(data) {
     }
 
     var p2 = document.createElement('p');
-    p2.textContent = 'Età: ' + data.Eta +' anni';
+    p2.textContent = 'Età: ' + data.Eta + ' anni';
     content.appendChild(p2);
 
     var p3 = document.createElement('p');
-    p3.textContent = 'Costo Adozione: ' + data.Importo +'';
+    p3.textContent = 'Costo Adozione: ' + data.Importo + '';
     content.appendChild(p3);
     // Creazione del form
     var form = document.createElement('form');

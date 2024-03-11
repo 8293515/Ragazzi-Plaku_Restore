@@ -6,13 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina di Pagamento</title>
+    <!-- Aggiungi eventuali stili aggiuntivi o script necessari qui -->
     <?php
     session_start();
+    // Verifica se l'ID della biodiversità è stato inviato con il modulo POST
     if (isset($_SESSION['IdBio'])) {
         $id_bio = $_SESSION['IdBio'];
+
+        // Ora puoi utilizzare $id_bio come necessario nel tuo script di pagamento
+        // ...
     } else {
+        // Gestione dell'errore nel caso in cui id_bio non sia presente
         echo "Errore: ID della biodiversità non presente.";
     }
+
     ?>
     <script src="scripts/pagamentojs.js"></script>
 </head>
@@ -27,7 +34,8 @@
     </div>
 
 
-    <div class="container">
+    <div class="container-personale">
+
         <h2>Informazioni di pagamento</h2>
 
         <form method="post" action="pagamentoeffettuato.php">
@@ -95,7 +103,7 @@
                                     echo '<p> Nome Specie:' . $nomeSpecie . '</p>';
                                     echo '<p> Nome Comune:' . $nomecomune . '</p>';
                                     echo '<p> Sesso:' . $sesso . '</p>';
-                                    echo '<p> Età:' . $eta . ' anni</p>';
+                                    echo '<p> Età:' . $eta . '</p>';
                                     echo '<p>Costo:' . $importo . '</p';
                                     echo '</div>';
                                     ?>
@@ -109,12 +117,14 @@
                     </div>
                 </div>
             </div>
+
         </form>
     </div>
     </div>
-    <br><br>
-    <?php include 'footer.html'; ?>
+
 
 </body>
+
+<?php include 'footer.html'; ?>
 
 </html>

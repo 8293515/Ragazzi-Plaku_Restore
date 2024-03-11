@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php session_start(); ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
 <script src="scripts/areapersonajs.js">
 
 </script>
+
 <body>
 
     <?php include 'nav.php'; ?>
@@ -22,7 +24,7 @@
 
     <div class="container-personale">
         <?php
-        
+
         // Connessione al database (sostituisci con le tue credenziali)
         $conn = mysqli_connect("localhost", "root", "", "dbrestore");
 
@@ -82,9 +84,8 @@
 
                 echo "</ul>";
                 echo "</div>";
-            }
-            else{
-              echo "<p>Non hai adottato nessun individuo.</p>";
+            } else {
+                echo "<p>Non hai adottato nessun individuo.</p>";
             }
         } else {
             echo "Cliente non trovato.";
@@ -96,10 +97,11 @@
 
     </div>
     <br><br><br>
-  
-</div>
-</div>
-  <?php include 'footer.html'?>
-  
-  </body>
+
+    </div>
+    </div>
+    <?php include 'footer.html' ?>
+
+</body>
+
 </html>

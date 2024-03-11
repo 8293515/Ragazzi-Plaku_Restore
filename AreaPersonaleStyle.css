@@ -17,7 +17,7 @@ body {
     line-height: 1.5;
 }
 
-.container-personale{
+.container-personale {
     max-width: 800px;
     margin: 20px auto;
     background-color: var(--white-smoke);
@@ -79,9 +79,9 @@ h3 {
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
-                7px 7px 20px 0px rgba(0,0,0,.1),
-                4px 4px 5px 0px rgba(0,0,0,.1);
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
     outline: none;
 }
 
@@ -112,9 +112,9 @@ h3 {
     right: 0;
     top: 0;
     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-                -4px -4px 6px 0 rgba(116, 125, 136, .2),
-                inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
     transition: all 0.3s ease;
 }
 
@@ -143,9 +143,9 @@ h3 {
     left: 0;
     bottom: 0;
     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-                -4px -4px 6px 0 rgba(116, 125, 136, .2),
-                inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
     transition: all 0.3s ease;
 }
 
@@ -226,23 +226,29 @@ h3 {
 }
 
 .species-image {
-    max-width: 150px; /* Imposta la larghezza massima desiderata */
-    height: auto; /* Mantieni l'aspetto proporzionato */
-    border-radius: 5px; /* Aggiungi una piccola cornice arrotondata */
+    max-width: 150px;
+    /* Imposta la larghezza massima desiderata */
+    height: auto;
+    /* Mantieni l'aspetto proporzionato */
+    border-radius: 5px;
+    /* Aggiungi una piccola cornice arrotondata */
 }
 
 
 .campo-info {
     font-weight: bold;
-  }
-  
-  .modifica-link {
-    color: #007BFF; /* Colore del link */
+}
+
+.modifica-link {
+    color: #007BFF;
+    /* Colore del link */
     cursor: pointer;
     text-decoration: underline;
-    margin-left: 10px; /* Aggiungi un margine sinistro per separare il link dal testo */
-  }
-  
-  .modifica-link:hover {
-    text-decoration: none; /* Rimuovi l'effetto di sottolineatura al passaggio del mouse */
-  }
+    margin-left: 10px;
+    /* Aggiungi un margine sinistro per separare il link dal testo */
+}
+
+.modifica-link:hover {
+    text-decoration: none;
+    /* Rimuovi l'effetto di sottolineatura al passaggio del mouse */
+}

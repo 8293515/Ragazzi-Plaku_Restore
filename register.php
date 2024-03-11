@@ -22,13 +22,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($image)) {
         die("Please choose a file to upload.");
     }
-    
+
     $imageData = file_get_contents($image);
     $imageData = mysqli_real_escape_string($conn, $imageData);
 
     // Esegui l'inserimento dei dati nel database utilizzando statement preparati
     $sql = $conn->prepare("INSERT INTO clienti (Email, Psw, Nome, Cognome,img,Amministratore) VALUES (?, ?, ?, ?,?,?)");
-    $sql->bind_param("ssssbd", $email, $psw, $nome, $cognome,$imageData,$amministratore);
+    $sql->bind_param("ssssbd", $email, $psw, $nome, $cognome, $imageData, $amministratore);
     mysqli_stmt_send_long_data($sql, 4, file_get_contents($image));
 
     if ($sql->execute()) {

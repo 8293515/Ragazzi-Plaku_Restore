@@ -85,7 +85,8 @@ blockquote {
   transition: border-color .3s, background-color .3s;
 }
 
-.btn:hover, .btn.dark {
+.btn:hover,
+.btn.dark {
   border-color: var(--black);
   background-color: var(--black);
 }
@@ -99,35 +100,43 @@ blockquote {
   border-color: var(--black);
   color: var(--black);
 }
+
 .btn.dark.outline:hover {
   border-color: var(--black);
   background-color: var(--black);
 }
+
 .btn.dark.outline.cat-menu {
   width: 100%;
 }
+
 .btn.dark.outline.cat-menu.w--current {
   background-color: var(--black);
   color: var(--white-smoke);
 }
+
 .btn.light {
   border-color: var(--white-smoke);
   background-color: var(--white-smoke);
   color: var(--black);
 }
+
 .btn.light:hover {
   border-color: var(--restore-green);
   background-color: var(--restore-green);
   color: var(--white-smoke);
 }
+
 .btn.light.outline {
   color: var(--white-smoke);
 }
+
 .btn.light.outline:hover {
   border-color: var(--white-smoke);
   background-color: var(--white-smoke);
   color: var(--black);
 }
+
 .btn.light.hero {
   margin-right: 10px;
 }
@@ -136,6 +145,7 @@ blockquote {
   color: var(--restore-green);
   background-color: rgba(0, 0, 0, 0);
 }
+
 .btn.outline:hover {
   border-color: var(--restore-green);
   background-color: var(--restore-green);
@@ -145,20 +155,6 @@ blockquote {
 .btn.outline:focus {
   border: 1px solid var(--restore-green);
   box-shadow: 0 0 2px 0 var(--restore-green);
-}
-
-.separator {
-  height: 1px;
-  background-color: var(--dim-grey);
-  margin-bottom: 20px;
-}
-.small {
-  margin-bottom: 10px;
-  font-size: 10px;
-}
-
-.small.caps {
-  text-transform: uppercase;
 }
 
 .small.footer-small {
@@ -191,24 +187,25 @@ blockquote {
 .page-title {
   margin-top: 10px;
 }
-  .hero-section {
-    min-height: 550px;
-    background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('images/3840x2160-px-Alberta-Alberta-National-Park-Canada-forest-Glacial-Lake-1410065-wallhere.com.jpg');
-    background-position: 0 0, 50%;
-    background-size: auto, cover;
-  }
-  
-  .hero-section.about-hero {
-    background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('../images/felix-rostig-UmV2wr-Vbq8-unsplash.jpg');
-    background-position: 0 0, 50% 60%;
-    background-size: auto, cover;
-  }
-  
-  .hero-section.contact-hero {
-    background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('../images/adam-solomon-WHUDOzd5IYU-unsplash-1-1.jpg');
-    background-position: 0 0, 50%;
-    background-size: auto, cover;
-  }
+
+.hero-section {
+  min-height: 550px;
+  background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('images/3840x2160-px-Alberta-Alberta-National-Park-Canada-forest-Glacial-Lake-1410065-wallhere.com.jpg');
+  background-position: 0 0, 50%;
+  background-size: auto, cover;
+}
+
+.hero-section.about-hero {
+  background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('../images/felix-rostig-UmV2wr-Vbq8-unsplash.jpg');
+  background-position: 0 0, 50% 60%;
+  background-size: auto, cover;
+}
+
+.hero-section.contact-hero {
+  background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)), url('../images/adam-solomon-WHUDOzd5IYU-unsplash-1-1.jpg');
+  background-position: 0 0, 50%;
+  background-size: auto, cover;
+}
 
 .menu-wrapper {
   z-index: 900;
@@ -492,13 +489,14 @@ blockquote {
 }
 
 
-  /*bottone adotta*/
-  button {
-    margin: 20px;
-  }
+/*bottone adotta*/
+button {
+  margin: 20px;
+}
 
 .nav-link.login-button {
-  background-color: transparent; /* o il colore che desideri */
+  background-color: transparent;
+  /* o il colore che desideri */
   border: 1px solid var(--restore-green);
   border-radius: 5px;
   padding: 5px 15px;
@@ -509,186 +507,201 @@ blockquote {
 .nav-link.login-button:hover {
   background-color: var(--black);
   background-image: none;
-  color: #fff; /* o il colore del testo desiderato */
+  color: #fff;
+  /* o il colore del testo desiderato */
   border-color: var(--black);
 }
-  .custom-btn {
-    width: 130px;
-    height: 40px;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-     7px 7px 20px 0px rgba(0,0,0,.1),
-     4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
-  }
-  .btn-4 {
-    background-color: #4dcc77;
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+}
+
+.btn-4 {
+  background-color: #4dcc77;
   background-image: linear-gradient(315deg, #4dcc77 0%, #96e4a9 74%);
-    line-height: 42px;
-    padding: 0;
-    border: none;
-  }
-  .btn-4:hover{
-    background-color: #89d8a7;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+
+.btn-4:hover {
+  background-color: #89d8a7;
   background-image: linear-gradient(315deg, #89d8a7 0%, #03c855 74%);
-  }
-  .btn-4 span {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .btn-4:before,
-  .btn-4:after {
-    position: absolute;
-    content: "";
-    right: 0;
-    top: 0;
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-      -4px -4px 6px 0 rgba(116, 125, 136, .2),
-      inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-    transition: all 0.3s ease;
-  }
-  
-  .btn-4:before {
-    height: 0%;
-    width: .1px;
-  }
-  
-  .btn-4:after {
-    width: 0%;
-    height: .1px;
-  }
-  
-  .btn-4:hover:before {
-    height: 100%;
-  }
-  
-  .btn-4:hover:after {
-    width: 100%;
-  }
-  
-  .btn-4 span:before,
-  .btn-4 span:after {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: 0;
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-      -4px -4px 6px 0 rgba(116, 125, 136, .2),
-      inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-    transition: all 0.3s ease;
-  }
-  
-  .btn-4 span:before {
-    width: .1px;
-    height: 0%;
-  }
-  
-  .btn-4 span:after {
-    width: 0%;
-    height: .1px;
-  }
-  
-  .btn-4 span:hover:before {
-    height: 100%;
-  }
-  
-  .btn-4 span:hover:after {
-    width: 100%;
-  }
+}
+
+.btn-4 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-4:before,
+.btn-4:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
+    -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  transition: all 0.3s ease;
+}
+
+.btn-4:before {
+  height: 0%;
+  width: .1px;
+}
+
+.btn-4:after {
+  width: 0%;
+  height: .1px;
+}
+
+.btn-4:hover:before {
+  height: 100%;
+}
+
+.btn-4:hover:after {
+  width: 100%;
+}
+
+.btn-4 span:before,
+.btn-4 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
+    -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  transition: all 0.3s ease;
+}
+
+.btn-4 span:before {
+  width: .1px;
+  height: 0%;
+}
+
+.btn-4 span:after {
+  width: 0%;
+  height: .1px;
+}
+
+.btn-4 span:hover:before {
+  height: 100%;
+}
+
+.btn-4 span:hover:after {
+  width: 100%;
+}
 
 /* Center the modal in the middle of the screen */
 .w3-modal {
-display: flex;
-align-items: center;
-justify-content: center;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 1000; /* Imposta un valore alto per assicurarti che il modal sia al di sopra della navbar */
-opacity: 0;
-transition: opacity 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  /* Imposta un valore alto per assicurarti che il modal sia al di sopra della navbar */
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .w3-modal.show {
-opacity: 1;
+  opacity: 1;
 }
 
 .w3-modal-content {
-max-width: 600px; /* Adjust the maximum width as needed */
-width: 100%;
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-background-color: #fff;
-position: relative; /* Ensure relative positioning for child elements */
-z-index: 1001; /* Assicurati che il modal-content abbia un valore z-index più alto del modal */
-text-align: center;
+  max-width: 600px;
+  /* Adjust the maximum width as needed */
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+  position: relative;
+  /* Ensure relative positioning for child elements */
+  z-index: 1001;
+  /* Assicurati che il modal-content abbia un valore z-index più alto del modal */
+  text-align: center;
 }
+
 .w3-modal-content h2 {
-margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .w3-modal-content form {
-display: flex;
-flex-direction: column;
-padding-left: 40px;
-padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .w3-modal-content label {
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .w3-modal-content input {
-padding: 10px;
-margin-bottom: 15px;
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
 .w3-modal-content button {
-padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .w3-modal-content p {
-margin-top: 20px;
+  margin-top: 20px;
 }
 
 /* Close button styles */
 .w3-display-topright {
-position: absolute; /* Position relative to the modal content */
-top: 10px;
-right: 10px;
-cursor: pointer;
-font-size: 20px;
-color: #1d1d1d; /* Adjust the color as needed */
+  position: absolute;
+  /* Position relative to the modal content */
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #1d1d1d;
+  /* Adjust the color as needed */
 }
 
 /* Optional: Hover effect */
 .w3-display-topright:hover {
-background-color: #d33f3f;
-background-image: linear-gradient(315deg, #d33f3f 0%, #c80303 74%);
-color: #ffffff; /* Change color on hover if desired */
+  background-color: #d33f3f;
+  background-image: linear-gradient(315deg, #d33f3f 0%, #c80303 74%);
+  color: #ffffff;
+  /* Change color on hover if desired */
 }
+
 body.modal-open {
-overflow: hidden;
+  overflow: hidden;
 }
-  
+
 /* Aggiungi questa regola specifica per ridurre la sfocatura dell'immagine */
 .nav-link.login-button.logged-in::before {
-filter: brightness(1) contrast(1) saturate(1) blur(0px); /* Puoi regolare questi valori */
-background-size: contain;
+  filter: brightness(1) contrast(1) saturate(1) blur(0px);
+  /* Puoi regolare questi valori */
+  background-size: contain;
 
 }

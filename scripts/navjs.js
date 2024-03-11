@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (sessionInfo.isLoggedIn) {
                 // L'utente è loggato, aggiorna il bottone di login
-                updateLoginButton(sessionInfo.img, sessionInfo.imginfo,sessionInfo.isAdmin);
+                updateLoginButton(sessionInfo.img, sessionInfo.imginfo, sessionInfo.isAdmin);
             }
         }
     };
@@ -29,18 +29,18 @@ function openModal() {
     modal.classList.add('show');
     // Aggiungi una classe al body per disabilitare lo scrolling
     document.body.classList.add('modal-open');
-  }
+}
 
-  function closeModal() {
+function closeModal() {
     var modal = document.getElementById('id01');
     modal.classList.remove('show');
     setTimeout(function () {
         modal.style.display = 'none';
-    }, 500); 
+    }, 500);
 
     document.body.classList.remove('modal-open');
-  }
-  function handleLogin() {
+}
+function handleLogin() {
     var email = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
@@ -56,7 +56,7 @@ function openModal() {
             var response = JSON.parse(xhr.responseText);
 
             if (response.success == true) {
-                updateLoginButton(response.img,response.imginfo);
+                updateLoginButton(response.img, response.imginfo);
                 closeModal();
             } else {
                 alert("Errore di login: " + response.message);
@@ -68,30 +68,30 @@ function openModal() {
     return false;
 }
 
-function updateLoginButton(imgBase64,imgInfo,isAdmin) {
-    var areaPersonaleButton = document.getElementById('AP'); 
+function updateLoginButton(imgBase64, imgInfo, isAdmin) {
+    var areaPersonaleButton = document.getElementById('AP');
     var loginButton = document.querySelector('.login-button');
- 
+
     if (loginButton) {
         // Rimuovi il contenuto esistente e abilita l'immagine di sfondo
         loginButton.innerHTML = "";
-        loginButton.onclick= openProfileModal;
+        loginButton.onclick = openProfileModal;
         loginButton.style.backgroundImage = "url('data:image/" + imgInfo + ";base64," + imgBase64 + "')";
         loginButton.classList.add('logged-in'); // Aggiungi la classe 'logged-in'
         loginButton.style.backgroundSize = "cover";
         loginButton.style.borderRadius = "50%";
         loginButton.style.width = "50px"; // Imposta la larghezza del cerchio
         loginButton.style.height = "50px"; // Imposta l'altezza del cerchio
-        if(isAdmin==1){
-          areaPersonaleButton.onclick = function () {
+        if (isAdmin == 1) {
+            areaPersonaleButton.onclick = function () {
                 window.location.href = 'AreaAmministratore.php';
             };
         }
-        else{
-          areaPersonaleButton.onclick = function () {
+        else {
+            areaPersonaleButton.onclick = function () {
                 window.location.href = 'AreaPersonale.php';
+            }
         }
-      }
 
     }
 }
@@ -113,6 +113,6 @@ function closeProfileModal() {
     profileModal.classList.remove('show');
     setTimeout(function () {
         profileModal.style.display = 'none';
-    }, 500); 
+    }, 500);
     document.body.classList.remove('modal-open');
 }

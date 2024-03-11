@@ -6,8 +6,7 @@ session_start();
 if (!isset($_SESSION['loggedin'])) {
     // Se l'utente non è loggato, reindirizzalo a sceltaspecie.php con un messaggio di avviso
     header("Location: sceltaspecie.php");
-}
-else{
+} else {
     foreach ($_POST as $key => $value) {
         $_SESSION[$key] = $value;
     }

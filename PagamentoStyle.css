@@ -1,423 +1,161 @@
 :root {
-    --restore-green: #00c04b;
-    --white-smoke: #f9f9f9;
-    --black: #222;
-    --dim-grey: #525252;
-    --brown: #ab4040;
-    --gold: #ffde03;
-    --red: #e53935;
-    --steel-blue: #1976d2;
-    --medium-sea-green: #20c788;
+  --restore-green: #00c04b;
+  --white-smoke: #f9f9f9;
+  --black: #222;
+  --dim-grey: #525252;
+  --brown: #ab4040;
+  --gold: #ffde03;
+  --red: #e53935;
+  --steel-blue: #1976d2;
+  --medium-sea-green: #20c788;
 }
 
 body {
-    color: #333;
-    font-family: Sen, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0; /* Rimuove il margine del corpo */
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  color: #333;
+  font-family: Sen, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  /* Rimuove il margine del corpo */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    flex: 1; /* Per far sì che il contenuto si espanda verticalmente */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  flex: 1;
+  /* Per far sì che il contenuto si espanda verticalmente */
+}
+
+.container-personale {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: var(--white-smoke);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Aggiunto un nuovo selettore per centrare la pagina */
 .centered-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-  
-  h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 32px;
-    font-weight: bold;
-    line-height: 36px;
-  }
-  
-  
-  label {
-    margin-bottom: 5px;
-    font-weight: 400;
-    display: block;
-  }
-  
-  blockquote {
-    border-left: 5px solid var(--restore-green);
-    margin-bottom: 10px;
-    padding: 10px 20px;
-    font-size: 25px;
-    font-weight: 800;
-    line-height: 1.5;
-  }
-  
-  .banner {
-    width: 100%;
-    color: var(--white-smoke);
-    background-color: #222;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .btn {
-    border: 1px solid var(--restore-green);
-    background-color: var(--restore-green);
-    border-radius: 5px;
-    padding: 5px 25px;
-    font-weight: 700;
-    transition: border-color 0.3s, background-color 0.3s;
-  }
-  
-  .btn:hover,
-  .btn.dark {
-    border-color: var(--black);
-    background-color: var(--black);
-  }
-  
-  .btn.dark:hover {
-    border-color: var(--restore-green);
-    background-color: var(--restore-green);
-  }
-  
-  .btn.dark.outline {
-    border-color: var(--black);
-    color: var(--black);
-  }
-  
-  .btn.dark.outline:hover {
-    border-color: var(--black);
-    background-color: var(--black);
-  }
-  
-  .btn.dark.outline.cat-menu {
-    width: 100%;
-  }
-  
-  .btn.dark.outline.cat-menu.w--current {
-    background-color: var(--black);
-    color: var(--white-smoke);
-  }
-  
-  .btn.light {
-    border-color: var(--white-smoke);
-    background-color: var(--white-smoke);
-    color: var(--black);
-  }
-  
-  .btn.light:hover {
-    border-color: var(--restore-green);
-    background-color: var(--restore-green);
-    color: var(--white-smoke);
-  }
-  
-  .btn.light.outline {
-    color: var(--white-smoke);
-  }
-  
-  .btn.light.outline:hover {
-    border-color: var(--white-smoke);
-    background-color: var(--white-smoke);
-    color: var(--black);
-  }
-  
-  .btn.light.hero {
-    margin-right: 10px;
-  }
-  
-  .btn.outline {
-    color: var(--restore-green);
-    background-color: rgba(0, 0, 0, 0);
-  }
-  
-  .btn.outline:hover {
-    border-color: var(--restore-green);
-    background-color: var(--restore-green);
-    color: var(--white-smoke);
-  }
-  
-  .btn.outline:focus {
-    border: 1px solid var(--restore-green);
-    box-shadow: 0 0 2px 0 var(--restore-green);
-  }
-  
-  .separator {
-    height: 1px;
-    background-color: var(--dim-grey);
-    margin-bottom: 20px;
-  }
-  
-  .small {
-    margin-bottom: 10px;
-    font-size: 10px;
-  }
-  
-  .small.caps {
-    text-transform: uppercase;
-  }
-  
-  .small.footer-small {
-    font-size: 12px;
-  }
-  
-  .page-title-section {
-    background-color: var(--black);
-    color: var(--white-smoke);
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  
-  .container.contact {
-    position: absolute;
-    top: 0%;
-    bottom: 0%;
-    left: 0%;
-    right: 0%;
-  }
-  
-  .page-title {
-    margin-top: 10px;
-  }
-  
-  .hero-section {
-    min-height: 550px;
-    background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)),
-        url('images/3840x2160-px-Alberta-Alberta-National-Park-Canada-forest-Glacial-Lake-1410065-wallhere.com.jpg');
-    background-position: 0 0, 50%;
-    background-size: auto, cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.hero-section.about-hero {
-    background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)),
-        url('../images/felix-rostig-UmV2wr-Vbq8-unsplash.jpg');
-    background-position: 0 0, 50% 60%;
-    background-size: auto, cover;
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 36px;
 }
 
-.hero-section.contact-hero {
-    background-image: linear-gradient(360deg, #222, rgba(34, 34, 34, 0)),
-        url('../images/adam-solomon-WHUDOzd5IYU-unsplash-1-1.jpg');
-    background-position: 0 0, 50%;
-    background-size: auto, cover;
-}
-  
-  .menu-wrapper {
-    z-index: 900;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-  }
-  
-  .navbar {
-    background-color: var(--restore-green);
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  
-  .nav-link {
-    color: var(--white-smoke);
-    border-radius: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 4px 10px;
-    transition: all 0.3s;
-  }
-  
-  .nav-link:hover {
-    background-color: var(--black);
-    background-image: none;
-  }
-  
-  .nav-link.w--current {
-    color: var(--white-smoke);
-  }
-  
-  .nav-wrapper {
-    color: #abf7b1;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-  }
-  
-  .hero-wrapper {
-    min-height: 550px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    display: flex;
-  }
-  
-  .hero-heading {
-    width: 35%;
-    color: var(--white-smoke);
-    font-size: 62px;
-    line-height: 1.2;
-  }
-  
-  .hero-heading.anout-hero-heading {
-    width: 40
-  }
-
-  
-
-  .custom-btn {
-    width: 130px;
-    height: 40px;
-    color: #69471398;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
-                7px 7px 20px 0px rgba(0,0,0,.1),
-                4px 4px 5px 0px rgba(0,0,0,.1);
-    outline: none;
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #69471398;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
 }
 
 .btn-4 {
-    background-color: #4dcc82;
-    background-image: linear-gradient(315deg, #4dcc82 0%, #96e4b0 74%);
-    line-height: 42px;
-    padding: 0;
-    border: none;
+  background-color: #4dcc82;
+  background-image: linear-gradient(315deg, #4dcc82 0%, #96e4b0 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
 }
 
 .btn-4:hover {
-    background-color: #89d8a7;
-    background-image: linear-gradient(315deg, #89d8a7 0%, #03c855 74%);
+  background-color: #89d8a7;
+  background-image: linear-gradient(315deg, #89d8a7 0%, #03c855 74%);
 }
 
 .btn-4 span {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .btn-4:before,
 .btn-4:after {
-    position: absolute;
-    content: "";
-    right: 0;
-    top: 0;
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-                -4px -4px 6px 0 rgba(116, 125, 136, .2),
-                inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-    transition: all 0.3s ease;
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
+    -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  transition: all 0.3s ease;
 }
 
 .btn-4:before {
-    height: 0%;
-    width: .1px;
+  height: 0%;
+  width: .1px;
 }
 
 .btn-4:after {
-    width: 0%;
-    height: .1px;
+  width: 0%;
+  height: .1px;
 }
 
 .btn-4:hover:before {
-    height: 100%;
+  height: 100%;
 }
 
 .btn-4:hover:after {
-    width: 100%;
+  width: 100%;
 }
 
 .btn-4 span:before,
 .btn-4 span:after {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: 0;
-    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-                -4px -4px 6px 0 rgba(116, 125, 136, .2),
-                inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
-    transition: all 0.3s ease;
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
+    -4px -4px 6px 0 rgba(116, 125, 136, .2),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  transition: all 0.3s ease;
 }
 
 .btn-4 span:before {
-    width: .1px;
-    height: 0%;
+  width: .1px;
+  height: 0%;
 }
 
 .btn-4 span:after {
-    width: 0%;
-    height: .1px;
+  width: 0%;
+  height: .1px;
 }
 
 .btn-4 span:hover:before {
-    height: 100%;
+  height: 100%;
 }
 
 .btn-4 span:hover:after {
-    width: 100%;
+  width: 100%;
 }
-
-
-.selection-section {
-  margin-top: 40px;
-}
-
-.selection-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.selection-option {
-  text-align: center;
-  padding: 20px;
-  border: 1px solid var(--dim-grey);
-  border-radius: 10px;
-}
-
-.selection-option img {
-  max-width: 100%;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.selection-option label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-
-
-.selection-section {
-  margin-top: 40px;
-}
-
-
 
 .selection-option {
   position: relative;
@@ -425,19 +163,24 @@ body {
   border: 1px solid var(--dim-grey);
   border-radius: 10px;
   overflow: hidden;
-  display: flex; /* Aggiunto il display flex */
+  display: flex;
+  /* Aggiunto il display flex */
 }
 
 .selection-option img {
-  max-width: 50%; /* Modificato la larghezza dell'immagine */
+  max-width: 50%;
+  /* Modificato la larghezza dell'immagine */
   border-radius: 5px;
 }
 
 .selection-content {
-  flex: 1; /* Flessibilità del contenuto per occupare lo spazio rimanente */
+  flex: 1;
+  /* Flessibilità del contenuto per occupare lo spazio rimanente */
   padding: 20px;
-  display: flex; /* Aggiunto il display flex per allineare il testo e il pulsante in colonna */
-  flex-direction: column; /* Layout a colonna per testo e pulsante */
+  display: flex;
+  /* Aggiunto il display flex per allineare il testo e il pulsante in colonna */
+  flex-direction: column;
+  /* Layout a colonna per testo e pulsante */
 }
 
 .selection-content label {
@@ -447,5 +190,6 @@ body {
 }
 
 .selection-button {
-  margin-top: 10px; /* Aggiunto margine tra il testo e il pulsante */
+  margin-top: 10px;
+  /* Aggiunto margine tra il testo e il pulsante */
 }

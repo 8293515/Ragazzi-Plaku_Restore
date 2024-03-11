@@ -43,9 +43,9 @@ button {
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
-                7px 7px 20px 0px rgba(0,0,0,.1),
-                4px 4px 5px 0px rgba(0,0,0,.1);
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
     outline: none;
 }
 
@@ -76,9 +76,9 @@ button {
     right: 0;
     top: 0;
     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-                -4px -4px 6px 0 rgba(116, 125, 136, .2),
-                inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
     transition: all 0.3s ease;
 }
 
@@ -107,9 +107,9 @@ button {
     left: 0;
     bottom: 0;
     box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .9),
-                -4px -4px 6px 0 rgba(116, 125, 136, .2),
-                inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
-                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+        -4px -4px 6px 0 rgba(116, 125, 136, .2),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .9),
+        inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
     transition: all 0.3s ease;
 }
 
@@ -139,7 +139,7 @@ button {
 .selection-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    
+
     gap: 20px;
 }
 
@@ -162,64 +162,6 @@ button {
     margin-bottom: 5px;
 }
 
-.footer {
-    background-color: var(--restore-green);
-    padding-top: 65px;
-    padding-bottom: 10px;
-}
-
-.footer-wrapper {
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-}
-
-.social-footer-link {
-    margin-left: 20px;
-    transition: all .3s;
-}
-
-.social-footer-link:hover {
-    opacity: .7;
-}
-
-.footer-bottom-wrapper {
-    color: var(--white-smoke);
-    text-align: center;
-    margin-top: 55px;
-}
-
-.navbar {
-    background-color: var(--restore-green);
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.nav-link {
-    color: var(--white-smoke);
-    border-radius: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 4px 10px;
-    transition: all .3s;
-}
-
-.nav-link:hover {
-    background-color: var(--black);
-    background-image: none;
-}
-
-.nav-link.w--current {
-    color: var(--white-smoke);
-}
-
-.nav-wrapper {
-    color: #abf7b1;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-}
-
 
 .selection-section {
     margin-top: 40px;
@@ -233,19 +175,24 @@ button {
     border: 1px solid var(--dim-grey);
     border-radius: 10px;
     overflow: hidden;
-    display: flex; /* Aggiunto il display flex */
+    display: flex;
+    /* Aggiunto il display flex */
 }
 
 .selection-option img {
-    max-width: 50%; /* Modificato la larghezza dell'immagine */
+    max-width: 50%;
+    /* Modificato la larghezza dell'immagine */
     border-radius: 5px;
 }
 
 .selection-content {
-    flex: 1; /* Flessibilità del contenuto per occupare lo spazio rimanente */
+    flex: 1;
+    /* Flessibilità del contenuto per occupare lo spazio rimanente */
     padding: 20px;
-    display: flex; /* Aggiunto il display flex per allineare il testo e il pulsante in colonna */
-    flex-direction: column; /* Layout a colonna per testo e pulsante */
+    display: flex;
+    /* Aggiunto il display flex per allineare il testo e il pulsante in colonna */
+    flex-direction: column;
+    /* Layout a colonna per testo e pulsante */
 }
 
 .selection-content label {
@@ -255,22 +202,30 @@ button {
 }
 
 .selection-button {
-    margin-top: 10px; /* Aggiunto margine tra il testo e il pulsante */
+    margin-top: 10px;
+    /* Aggiunto margine tra il testo e il pulsante */
 }
 
 .modal {
     display: none;
     position: fixed;
-    top: 48%;   /*Regola la posizione del modal*/
-    left: 50%;  /*Regola la posizione del modal*/
+    top: 48%;
+    /*Regola la posizione del modal*/
+    left: 50%;
+    /*Regola la posizione del modal*/
     transform: translate(-50%, -50%);
     z-index: 1000;
-    width: 100%; /* Imposta la larghezza desiderata del modal */
-    max-width: 1200px; /* Imposta la larghezza massima del modal se necessario */
-    height: 100%; /* Imposta l'altezza desiderata del modal */
-    max-height: none; /* Imposta l'altezza massima del modal se necessario */
-    background: rgba(255, 255, 255, 0.5); /* Sfondo semitrasparente per l'overlay */
-    overflow-y:auto;
+    width: 100%;
+    /* Imposta la larghezza desiderata del modal */
+    max-width: 1200px;
+    /* Imposta la larghezza massima del modal se necessario */
+    height: 100%;
+    /* Imposta l'altezza desiderata del modal */
+    max-height: none;
+    /* Imposta l'altezza massima del modal se necessario */
+    background: rgba(255, 255, 255, 0.5);
+    /* Sfondo semitrasparente per l'overlay */
+    overflow-y: auto;
 }
 
 /* Stile per il contenuto del modal */
@@ -278,12 +233,18 @@ button {
     position: relative;
     text-align: center;
     max-height: none;
-    height:75%; /* Imposta l'altezza massima del modal */
-    width: 90%; /* Imposta la larghezza del modal al 90% della larghezza della finestra */
-    margin: auto; /* Centra il modal orizzontalmente */
-    padding: 20px; /* Aggiungi padding al contenuto del modal */
-    background-color: white; /* Sfondo bianco */
-    border-radius: 10px; /* Bordo arrotondato */
+    height: 75%;
+    /* Imposta l'altezza massima del modal */
+    width: 90%;
+    /* Imposta la larghezza del modal al 90% della larghezza della finestra */
+    margin: auto;
+    /* Centra il modal orizzontalmente */
+    padding: 20px;
+    /* Aggiungi padding al contenuto del modal */
+    background-color: white;
+    /* Sfondo bianco */
+    border-radius: 10px;
+    /* Bordo arrotondato */
 }
 
 /* Immagine all'interno del modal */
@@ -291,8 +252,10 @@ button {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 15px; /* Aggiungi uno spazio inferiore all'immagine */
+    margin-bottom: 15px;
+    /* Aggiungi uno spazio inferiore all'immagine */
 }
+
 /* Aggiungi uno stile per la griglia interna del modal */
 
 /* Aggiungi uno stile per ciascun riquadro nella griglia del modal */
@@ -304,21 +267,26 @@ button {
     height: 300px;
     overflow: hidden;
     display: flex;
-    padding: 20px; /* Aumenta il padding */
-    margin: 10px; /* Aggiunto il margine */
-    
+    padding: 20px;
+    /* Aumenta il padding */
+    margin: 10px;
+    /* Aggiunto il margine */
+
 }
+
 .close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 24px;
     cursor: pointer;
-    color: #fff;
+    color: black;
 }
+
 .modal-item-img-container {
     width: 100%;
-    max-height: 150px; /* Regola l'altezza massima desiderata */
+    max-height: 150px;
+    /* Regola l'altezza massima desiderata */
     overflow: hidden;
     text-align: center;
 }
@@ -326,19 +294,15 @@ button {
 .modal-item-img-container img {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* Puoi regolare la dimensione del bordo se lo desideri */
+    border-radius: 8px;
+    /* Puoi regolare la dimensione del bordo se lo desideri */
 }
 
 
 
 
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+
 
 
 /* Aggiorna lo stile per l'immagine all'interno del modal */
@@ -361,15 +325,18 @@ button {
 
 /* Posiziona l'immagine come in selection-option */
 #adoptModalContent .modal-item-img-container img {
-    max-width: 100%; /* Larghezza massima dell'immagine */
+    max-width: 100%;
+    /* Larghezza massima dell'immagine */
     border-radius: 5px;
 }
+
 /* Aggiorna lo stile per la griglia interna del modal con scrolling */
 .modal-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
-    max-height: 80vh; /* Imposta l'altezza massima della griglia interna */
+    max-height: 80vh;
+    /* Imposta l'altezza massima della griglia interna */
 }
 
 /* Aggiungi stile per i riquadri del modal */
@@ -380,12 +347,15 @@ button {
     border-radius: 10px;
     overflow: hidden;
     display: flex;
-    padding: 20px; /* Aumenta il padding */
-    margin: 10px; /* Aggiunto il margine */
+    padding: 20px;
+    /* Aumenta il padding */
+    margin: 10px;
+    /* Aggiunto il margine */
 }
 
 .modal-item img {
-    width: 100%; /* Larghezza massima dell'immagine */
+    width: 100%;
+    /* Larghezza massima dell'immagine */
     border-radius: 5px;
 }
 
@@ -395,7 +365,7 @@ button {
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    
+
 }
 
 
@@ -403,7 +373,8 @@ button {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    width:150px;  /*Larghezza Scritte del Modal*/
+    width: 150px;
+    /*Larghezza Scritte del Modal*/
 }
 
 
