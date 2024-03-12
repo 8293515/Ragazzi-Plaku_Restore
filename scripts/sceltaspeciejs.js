@@ -191,10 +191,10 @@ function createModalItem(data) {
     form.method = 'post';
 
     for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-            var hiddenInput = document.createElement('input');
-            hiddenInput.type = 'hidden';
-            hiddenInput.name = key;
+        if (data.hasOwnProperty(key)) {          // Mi assicuro che solo le proprietà dell'oggetto 'data' vengano considerate nel ciclo
+            var hiddenInput = document.createElement('input'); // In realtà data.hasOwnProperty non dovrebbe essere più necessario
+            hiddenInput.type = 'hidden';                       // Nella versione corrente del codice ma l'ho lasciato nel caso
+            hiddenInput.name = key;                            // Serva in future implementazioni
             hiddenInput.value = data[key];
             form.appendChild(hiddenInput);
         }

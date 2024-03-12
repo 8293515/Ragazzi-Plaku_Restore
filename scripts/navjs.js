@@ -76,7 +76,7 @@ function handleLogin() {
 function updateLoginButton(imgBase64, imgInfo, isAdmin) {
     // Aggiorna il bottone di login
     var areaPersonaleButton = document.getElementById('AP');
-    var loginButton = document.querySelector('.login-button');
+    var loginButton = document.querySelector('.login-button'); // Seleziona il primo elemento con la classe "LoginButton"
 
     if (loginButton) {
         // Rimuovi il contenuto esistente e abilita l'immagine di sfondo

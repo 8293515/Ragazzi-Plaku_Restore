@@ -36,9 +36,17 @@ header('Content-Type: application/json');      ----> Quando un client fa una ric
                                                      L'ho usato per risolvere un'errore con il json e ho scoperto che è una pratica comune per indicare il tipo di contenuto della risposta e consentendo al client l'interpretazione corretta del JSON quindi l'ho sempre usato quando ho utilizzato json
                                                      (potrebbe essere che magari non l'ho usato ovunque e dato che non mi ha dato errori non l'ho nemmeno notato, non mi pare però)
 
-echo json_encode(variabile/array);             ----> La funzione json_encode() in PHP viene utilizzata per convertire una variabile o un array PHP in una stringa JSON. 
+echo json_encode(variabile/array);             ----> La funzione json_encode() in PHP viene utilizzata 
+                                                     per convertire una variabile o   un array PHP in una stringa JSON. 
                                                      L'ho utilizzata nelle chiamate ajax per passare i dati dal server al client.
 
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                                    ----> serve a impostare l'intestazione (header) HTTP per la richiesta XMLHttpRequest con il tipo di contenuto "application/x-www-form-urlencoded". Questo indica al server come interpretare i dati inviati nella richiesta.
+                                                    Questa è una forma comune di codifica dei dati in cui i dati sono formattati come coppie chiave-valore, separate da "&", e i caratteri speciali sono codificati in modo appropriato (ad esempio, gli spazi diventano "%20").
+
+encodeURIComponent(nomevariabile);  ---->       La funzione encodeURIComponent viene utilizzata per codificare correttamente il valore
+                                                della variabile.L'ho utilizzato per inviare con l'xhr.send() per inviare un dato insieme
+                                                al corpo della richiesta al server.
 
 Spiegazione elementi particolari by Don Plaku:
 Stili particolari utilizzati(che magari è meglio spiegare):
