@@ -61,7 +61,7 @@ function createSelectionGrid(containerId) {
     var container = document.getElementById(containerId);
 
     if (!container) {
-        console.error("Container element not found:", containerId);
+        console.error("Elemento non trovato:", containerId);
         return null;
     }
 
